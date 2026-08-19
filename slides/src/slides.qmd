@@ -20,6 +20,27 @@ include-in-header:
 - Who this talk is for: empirical researchers, not software engineers
 - What we will and will not cover
 
+# About Me
+
+**Daniel Sánchez, MA**
+
+Consultant, Baker Tilly Ecuador — AI Enablement Expert
+
+Economist specialized in automation; expert in applied AI and analytics for decision-making. Combines data analysis, visualization, finance, and audit.
+
+**Education**
+
+- MA in Economics — Simon Fraser University (Canada)
+- BA in Finance — Universidad San Francisco de Quito (Ecuador)
+- BA in Economics — Universidad San Francisco de Quito (Ecuador)
+
+**Areas of Expertise**
+
+- Applied analytics for decision-making
+- Power Query and data-flow automation for accounting and audit
+- AI integrations for analysis and reporting
+- Visualization and communication of results
+
 # Agenda
 
 1. Introduction: why agentic AI
