@@ -1,0 +1,85 @@
+---
+title: A Mostly Harmless Introduction to Claude Code, Codex and Friends
+subtitle: For Empirical Researchers
+author: Daniel Sánchez Pazmiño
+date: 2026-09-03
+theme: berlin
+date-format: "MMMM D, YYYY"
+format: beamer
+fontsize: 10pt
+include-in-header:
+    - text: |
+        \setbeamercolor{background canvas}{bg=white}
+        \setbeamertemplate{caption}[numbered]
+        \usecolortheme[named=black]{structure}
+---
+
+# Welcome
+
+- Workshops for Ukraine
+- Who this talk is for: empirical researchers, not software engineers
+- What we will and will not cover
+
+# Agenda
+
+- Why AI coding assistants matter for research workflows
+- Meet the tools: Claude Code, Codex, and friends
+- Terminal-based agents vs. chat-based assistants
+- A live demo on a real research task
+- Practical tips, pitfalls, and where to go from here
+
+# Why This Matters for Empirical Research
+
+- Research code is mostly glue: cleaning data, wrangling, plotting, writing
+- Agentic coding tools can operate directly on your project files
+- Faster iteration on data pipelines, replication code, and slide decks like this one
+
+# Meet the Tools
+
+## Claude Code
+
+- Anthropic's agentic CLI coding tool
+- Reads and edits files, runs shell commands, uses MCP servers
+
+## Codex
+
+- OpenAI's agentic coding tool
+- Similar workflow, different ecosystem and defaults
+
+## Friends
+
+- Other agentic assistants worth knowing about
+
+# Terminal Agents vs. Chat Assistants
+
+- Chat assistants: copy-paste in and out of a browser
+- Terminal agents: operate on your actual project, run code, iterate on errors
+- Implications for reproducibility and version control
+
+# Live Demo
+
+- A real empirical research task, done live
+- What to watch for: prompting, verification, undoing mistakes
+
+# Practical Tips for Researchers
+
+- Treat the agent like a capable but literal-minded research assistant
+- Always verify output against the data and the code, not just the prose
+- Version control everything; commit before letting an agent make large changes
+
+# Pitfalls
+
+- Hallucinated results and citations
+- Silent errors in statistical code
+- Overtrusting output without inspecting intermediate steps
+
+# Resources and Where to Go Next
+
+- Documentation links
+- Community and support channels
+- Questions
+
+# Thank You
+
+- Daniel Sánchez Pazmiño
+- Workshops for Ukraine — September 3, 2026

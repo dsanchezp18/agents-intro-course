@@ -1,0 +1,8 @@
+slides/src/.quarto/
+*.aux
+*.log
+*.nav
+*.snm
+*.toc
+*.vrb
+*.synctex.gz
