@@ -48,7 +48,8 @@ Economist specialized in automation; expert in applied AI and analytics for deci
 3. How to use agentic AI: mechanics and cost models
 4. Quick overview: best model for common users
 5. Usages (the core, hands-on section)
-6. Multi-agent (tentative)
+6. Cybersecurity: do's and don'ts
+7. Multi-agent (tentative)
 
 # Introduction: Why Agentic AI
 
@@ -105,6 +106,22 @@ The core, hands-on section.
 - Connecting the agent directly to data sources instead of manual CSV exports
 - Databases, Google Drive, Notion, internal government systems, APIs
 - Relevant to this audience: StatCan, IESS/REESS, ENEMDU-style admin data pulls
+
+# Cybersecurity: Do's and Don'ts
+
+**Do**
+
+- Use vetted, org-approved tools and check for a data processing agreement
+- Keep credentials out of prompts — use secret managers/env vars, never paste tokens or passwords into chat
+- Scope MCP/data connections to least privilege (read-only where possible)
+- Know what data leaves your machine before granting file or network access
+
+**Don't**
+
+- Don't paste PII, credentials, or restricted admin microdata into a public chat interface
+- Don't grant blanket filesystem or internet access without understanding what the agent can reach
+- Don't treat "the agent says it's fine" as a compliance answer
+- Don't skip your institution's confidentiality and data-handling agreements for convenience
 
 # Multi-Agent {.fragile}
 
