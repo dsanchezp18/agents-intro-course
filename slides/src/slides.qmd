@@ -22,62 +22,76 @@ include-in-header:
 
 # Agenda
 
-- Why AI coding assistants matter for research workflows
-- Meet the tools: Claude Code, Codex, and friends
-- Terminal-based agents vs. chat-based assistants
-- A live demo on a real research task
-- Practical tips, pitfalls, and where to go from here
+1. Introduction: why agentic AI
+2. What's out there: the landscape of tools
+3. How to use agentic AI: mechanics and cost models
+4. Quick overview: best model for common users
+5. Usages (the core, hands-on section)
+6. Multi-agent (tentative)
 
-# Why This Matters for Empirical Research
+# Introduction: Why Agentic AI
 
-- Research code is mostly glue: cleaning data, wrangling, plotting, writing
-- Agentic coding tools can operate directly on your project files
-- Faster iteration on data pipelines, replication code, and slide decks like this one
+- From autocomplete to agents: what changed
+- Why this matters specifically for empirical research workflows
+- Agents can read, edit, and run — not just suggest text
 
-# Meet the Tools
+# The Landscape: What's Out There
 
-## Claude Code
+- Terminal / CLI agents: Claude Code, Codex, and friends
+- Chat-based assistants vs. agentic tools
+- IDE-integrated agents
+- What researchers are actually adopting right now
 
-- Anthropic's agentic CLI coding tool
-- Reads and edits files, runs shell commands, uses MCP servers
+# Mechanics and Cost Models
 
-## Codex
+- How an agentic session actually works under the hood
+- Context windows, tool calls, and iteration loops
+- Subscription vs. API/token-based pricing
+- Ballpark costs for a typical research workflow
 
-- OpenAI's agentic coding tool
-- Similar workflow, different ecosystem and defaults
+# Quick Overview: Best Model for Common Users
 
-## Friends
+- What "best" depends on: task type, budget, workflow
+- Rules of thumb for picking a model/tool as a non-specialist
+- When the default choice is good enough
 
-- Other agentic assistants worth knowing about
+# Usages
 
-# Terminal Agents vs. Chat Assistants
+The core, hands-on section.
 
-- Chat assistants: copy-paste in and out of a browser
-- Terminal agents: operate on your actual project, run code, iterate on errors
-- Implications for reproducibility and version control
+## 1. Code Review
 
-# Live Demo
+- Catching bugs and silent errors in statistical/data code
+- Reviewing before merging or before submitting to a coauthor
 
-- A real empirical research task, done live
-- What to watch for: prompting, verification, undoing mistakes
+## 2. Literature Review
 
-# Practical Tips for Researchers
+- Search, summarize, and synthesize across papers
+- Where agents help — and where they still hallucinate citations
 
-- Treat the agent like a capable but literal-minded research assistant
-- Always verify output against the data and the code, not just the prose
-- Version control everything; commit before letting an agent make large changes
+## 3. Writing Review
 
-# Pitfalls
+- Drafting and editing papers, referee reports, slides
+- Keeping the researcher's voice and claims intact
 
-- Hallucinated results and citations
-- Silent errors in statistical code
-- Overtrusting output without inspecting intermediate steps
+## 4. Skills and Agents from Modern Economists
 
-# Resources and Where to Go Next
+- Reusable prompts, skills, and workflows built by other researchers
+- Examples worth adapting
 
-- Documentation links
-- Community and support channels
-- Questions
+## 5. MCP for Data Access
+
+- Connecting the agent directly to data sources instead of manual CSV exports
+- Databases, Google Drive, Notion, internal government systems, APIs
+- Relevant to this audience: StatCan, IESS/REESS, ENEMDU-style admin data pulls
+
+# Multi-Agent {.fragile}
+
+\footnotesize (Tentative — first thing to cut if running long)\normalsize
+
+- Running multiple agents in parallel or in a pipeline
+- When one agent isn't enough: division of labor, orchestration
+- Practical caveats: cost, coordination, verification overhead
 
 # Thank You
 
