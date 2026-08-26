@@ -16,30 +16,25 @@ include-in-header:
 
 # Welcome
 
-- Workshops for Ukraine
-- Who this talk is for: empirical researchers, not software engineers
-- What we will and will not cover
+Thank you for joining this session of **Workshops for Ukraine**.
+
+- Built for empirical researchers — economists, not software engineers
+- Practical and hands-on: what to actually do, not how LLMs are built under the hood
 
 # About Me
 
 **Daniel Sánchez, MA**
 
-Consultant, Baker Tilly Ecuador — AI Enablement Expert
+- Economist — MA in Economics, Simon Fraser University (Canada)
+- Statistician, Government of Alberta — nowcasting economic accounts in R/SQL
+- Consultant, Corporate Finance & Digital Transformation, Baker Tilly Ecuador
+- Co-director, Laboratorio de Investigación en Desarrollo del Ecuador (LIDE)
 
-Economist specialized in automation; expert in applied AI and analytics for decision-making. Combines data analysis, visualization, finance, and audit.
+**Working with agentic AI**
 
-**Education**
-
-- MA in Economics — Simon Fraser University (Canada)
-- BA in Finance — Universidad San Francisco de Quito (Ecuador)
-- BA in Economics — Universidad San Francisco de Quito (Ecuador)
-
-**Areas of Expertise**
-
-- Applied analytics for decision-making
-- Power Query and data-flow automation for accounting and audit
-- AI integrations for analysis and reporting
-- Visualization and communication of results
+- Design GenAI workflows (Claude, ChatGPT, Gemini, Copilot) for due diligence, financial analysis, and reporting
+- Build autonomous agents with Claude Code and Cowork for document processing and structured extraction
+- Connect agents to everyday tools — Excel, Outlook, Teams — via MCP
 
 # Agenda
 
@@ -53,9 +48,51 @@ Economist specialized in automation; expert in applied AI and analytics for deci
 
 # Introduction: Why Agentic AI
 
-- From autocomplete to agents: what changed
-- Why this matters specifically for empirical research workflows
-- Agents can read, edit, and run — not just suggest text
+The real bottleneck in most empirical projects is not the econometrics — it's
+the grind around it:
+
+- Cleaning a messy microdata file for the third time this month
+- Chasing down why a regression coefficient changed after "nothing changed"
+- Reformatting the same table for a fourth journal's style
+
+That grind is exactly the part a chat window cannot touch — and exactly the
+part an agent can sit inside.
+
+## Vanilla AI vs. Agentic AI
+
+**Vanilla AI (ChatGPT, Claude.ai, a chat window)**
+
+- You paste in code or data, it replies with text
+- You copy the suggestion back out, apply it yourself, rerun it yourself
+- It never sees whether its own suggestion actually worked
+
+**Agentic AI (Claude Code, Codex, and friends)**
+
+- It opens your files, makes the edit itself, runs the script itself
+- It reads the real error or output and tries again — without you relaying it
+- The unit of delegation moves from *a question* to *a task*
+
+## From Autocomplete to Agents: What Changed
+
+- Autocomplete and chat: one-shot generation — no feedback loop, no way to
+  check its own answer against reality
+- Agents run a loop instead: **read → plan → act → observe → repeat**
+  - "Act" means calling a real tool: open a file, run a script, query data
+  - "Observe" means reading the actual result, not guessing at it
+- What made this possible: larger context windows and reliable tool use —
+  not simply "a smarter model"
+
+## Why This Matters for Empirical Research
+
+- The agent can read your raw data, write and run the cleaning script, and
+  notice when a value label silently changed across survey waves
+- It can run your regression, read the actual error message, and fix the bug
+  — instead of you pasting the traceback back and forth
+- It does **not** replace your judgment on identification, specification, or
+  interpretation — you still decide what's correct, it does the retyping and
+  rerunning
+- Net effect: fewer hours lost to mechanical iteration, more time on the
+  parts of the research that actually require you
 
 # The Landscape: What's Out There
 

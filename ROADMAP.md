@@ -10,8 +10,8 @@ Status legend: **[ ]** not started · **[~]** skeleton only · **[x]** done
 
 ## Talk outline
 
-1. [~] Introduction: why agentic AI
-   - [ ] Agents vs. "vanilla AI" — draw the line between a chat-only assistant
+1. [x] Introduction: why agentic AI
+   - [x] Agents vs. "vanilla AI" — draw the line between a chat-only assistant
          and something that can read files, edit them, and run commands
 2. [~] Landscape: what's out there, what people are using
    - [ ] How AI is presented: ChatGPT / Claude / Cowork (chat surfaces) vs.
@@ -40,7 +40,7 @@ needs real content, examples, and (per below) visuals.
 
 ## New topics to weave in
 
-- [ ] "Agents vs. vanilla AI" framing — lands inside section 1
+- [x] "Agents vs. vanilla AI" framing — lands inside section 1
 - [ ] Tool landscape comparison (chat surfaces vs. agentic CLIs, plus Cursor /
       OpenClaw / etc.) — new slide(s) inside section 2
 - [ ] Tokens explainer — new slide inside section 3
