@@ -21,6 +21,19 @@ Status legend: **[ ]** not started · **[~]** skeleton only · **[x]** done
 3. [~] Mechanics and cost models
    - [ ] Tokens — what they are, how usage is metered, why it matters for
          budgeting a research workflow
+         - [ ] Cake analogy: a subscription's token allowance is a whole cake
+               baked for the week; every prompt/response cuts a slice. Big
+               tasks (long documents, large codebases) cut thick slices —
+               run out early and there's no cake left for Friday. Ration
+               slices across the week, or use the API (buy cake by the
+               slice, pay only for what you eat) if usage is spiky
+         - [ ] Two limits, not one: subscriptions (e.g. Claude Pro/Max) cap
+               usage on a rolling **5-hour window** *and* a **weekly** cap —
+               two cakes at once, a small one that resets every 5 hours and
+               a big one that has to last the whole week. Hitting the 5-hour
+               cap just pauses you until the next window; hitting the
+               weekly cap means no more cake until next week (or top up via
+               API)
    - [ ] Subscription vs. API/token pricing
 4. [~] Quick overview: best model for common users
 5. [~] Usages (the core, hands-on section)
@@ -43,7 +56,9 @@ needs real content, examples, and (per below) visuals.
 - [ ] "Agents vs. vanilla AI" framing — lands inside section 1
 - [ ] Tool landscape comparison (chat surfaces vs. agentic CLIs, plus Cursor /
       OpenClaw / etc.) — new slide(s) inside section 2
-- [ ] Tokens explainer — new slide inside section 3
+- [ ] Tokens explainer — new slide inside section 3, using the cake-and-slices
+      analogy (weekly allowance = whole cake, each use = a slice, budget
+      slices across the week)
 
 ## Visual design — "make it cool"
 
