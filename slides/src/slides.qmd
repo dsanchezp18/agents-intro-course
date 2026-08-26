@@ -16,49 +16,47 @@ include-in-header:
 
 # Welcome
 
-Thank you for joining this session of **Workshops for Ukraine**.
-
-- Built for empirical researchers — economists, not software engineers
-- Practical and hands-on: what to actually do, not how LLMs are built under the hood
+- Workshops for Ukraine
+- Audience: empirical researchers, not software engineers
+- Scope: practical and hands-on
 
 # About Me
 
 **Daniel Sánchez, MA**
 
-- Economist — MA in Economics, Simon Fraser University (Canada)
-- Statistician, Government of Alberta — nowcasting economic accounts in R/SQL
-- Consultant, Corporate Finance & Digital Transformation, Baker Tilly Ecuador
-- Co-director, Laboratorio de Investigación en Desarrollo del Ecuador (LIDE)
+- Economist, MA in Economics, Simon Fraser University (Canada)
+- Statistician, Government of Alberta: nowcasting economic accounts in R/SQL
+- Co-director, Laboratorio de Investigación en Desarrollo del Ecuador (LIDE), an Ecuadorian development research lab
 
 **Working with agentic AI**
 
 - Design GenAI workflows (Claude, ChatGPT, Gemini, Copilot) for due diligence, financial analysis, and reporting
 - Build autonomous agents with Claude Code and Cowork for document processing and structured extraction
-- Connect agents to everyday tools — Excel, Outlook, Teams — via MCP
+- Connect agents to everyday tools (Excel, Outlook, Teams) via MCP
 
 # Agenda
 
 1. Introduction: why agentic AI
 2. What's out there: the landscape of tools
-3. How to use agentic AI: mechanics and cost models
-4. Quick overview: best model for common users
-5. Usages (the core, hands-on section)
-6. Cybersecurity: do's and don'ts
+3. Cybersecurity: do's and don'ts
+4. How to use agentic AI: mechanics and cost models
+5. Quick overview: best model for common users
+6. Usages (the core, hands-on section)
 7. Multi-agent (tentative)
 
 # Introduction: Why Agentic AI
 
-The real bottleneck in most empirical projects is not the econometrics — it's
+The real bottleneck in most empirical projects is not the econometrics. It's
 the grind around it:
 
 - Cleaning a messy microdata file for the third time this month
 - Chasing down why a regression coefficient changed after "nothing changed"
 - Reformatting the same table for a fourth journal's style
 
-That grind is exactly the part a chat window cannot touch — and exactly the
+That grind is exactly the part a chat window cannot touch, and exactly the
 part an agent can sit inside.
 
-## Vanilla AI vs. Agentic AI
+# Vanilla AI vs. Agentic AI
 
 **Vanilla AI (ChatGPT, Claude.ai, a chat window)**
 
@@ -69,27 +67,27 @@ part an agent can sit inside.
 **Agentic AI (Claude Code, Codex, and friends)**
 
 - It opens your files, makes the edit itself, runs the script itself
-- It reads the real error or output and tries again — without you relaying it
+- It reads the real error or output and tries again, without you relaying it
 - The unit of delegation moves from *a question* to *a task*
 
-## From Autocomplete to Agents: What Changed
+# From Autocomplete to Agents: What Changed
 
-- Autocomplete and chat: one-shot generation — no feedback loop, no way to
+- Autocomplete and chat: one-shot generation, no feedback loop, no way to
   check its own answer against reality
 - Agents run a loop instead: **read → plan → act → observe → repeat**
   - "Act" means calling a real tool: open a file, run a script, query data
   - "Observe" means reading the actual result, not guessing at it
-- What made this possible: larger context windows and reliable tool use —
-  not simply "a smarter model"
+- What made this possible: larger context windows and reliable tool use, not
+  simply "a smarter model"
 
-## Why This Matters for Empirical Research
+# Why This Matters for Empirical Research
 
 - The agent can read your raw data, write and run the cleaning script, and
   notice when a value label silently changed across survey waves
-- It can run your regression, read the actual error message, and fix the bug
-  — instead of you pasting the traceback back and forth
+- It can run your regression, read the actual error message, and fix the bug,
+  instead of you pasting the traceback back and forth
 - It does **not** replace your judgment on identification, specification, or
-  interpretation — you still decide what's correct, it does the retyping and
+  interpretation: you still decide what's correct, it does the retyping and
   rerunning
 - Net effect: fewer hours lost to mechanical iteration, more time on the
   parts of the research that actually require you
@@ -100,6 +98,20 @@ part an agent can sit inside.
 - Chat-based assistants vs. agentic tools
 - IDE-integrated agents
 - What researchers are actually adopting right now
+
+# Cybersecurity: Do's
+
+- Use vetted, org-approved tools and check for a data processing agreement
+- Keep credentials out of prompts: use secret managers/env vars, never paste tokens or passwords into chat
+- Scope MCP/data connections to least privilege (read-only where possible)
+- Know what data leaves your machine before granting file or network access
+
+# Cybersecurity: Don'ts
+
+- Don't paste PII, credentials, or restricted admin microdata into a public chat interface
+- Don't grant blanket filesystem or internet access without understanding what the agent can reach
+- Don't treat "the agent says it's fine" as a compliance answer
+- Don't skip your institution's confidentiality and data-handling agreements for convenience
 
 # Mechanics and Cost Models
 
@@ -118,51 +130,35 @@ part an agent can sit inside.
 
 The core, hands-on section.
 
-## 1. Code Review
+# Usages: Code Review
 
 - Catching bugs and silent errors in statistical/data code
 - Reviewing before merging or before submitting to a coauthor
 
-## 2. Literature Review
+# Usages: Literature Review
 
 - Search, summarize, and synthesize across papers
-- Where agents help — and where they still hallucinate citations
+- Where agents help, and where they still hallucinate citations
 
-## 3. Writing Review
+# Usages: Writing Review
 
 - Drafting and editing papers, referee reports, slides
 - Keeping the researcher's voice and claims intact
 
-## 4. Skills and Agents from Modern Economists
+# Usages: Skills and Agents from Modern Economists
 
 - Reusable prompts, skills, and workflows built by other researchers
 - Examples worth adapting
 
-## 5. MCP for Data Access
+# Usages: MCP for Data Access
 
 - Connecting the agent directly to data sources instead of manual CSV exports
 - Databases, Google Drive, Notion, internal government systems, APIs
 - Relevant to this audience: StatCan, IESS/REESS, ENEMDU-style admin data pulls
 
-# Cybersecurity: Do's and Don'ts
-
-**Do**
-
-- Use vetted, org-approved tools and check for a data processing agreement
-- Keep credentials out of prompts — use secret managers/env vars, never paste tokens or passwords into chat
-- Scope MCP/data connections to least privilege (read-only where possible)
-- Know what data leaves your machine before granting file or network access
-
-**Don't**
-
-- Don't paste PII, credentials, or restricted admin microdata into a public chat interface
-- Don't grant blanket filesystem or internet access without understanding what the agent can reach
-- Don't treat "the agent says it's fine" as a compliance answer
-- Don't skip your institution's confidentiality and data-handling agreements for convenience
-
 # Multi-Agent {.fragile}
 
-\footnotesize (Tentative — first thing to cut if running long)\normalsize
+\footnotesize (Tentative, first thing to cut if running long)\normalsize
 
 - Running multiple agents in parallel or in a pipeline
 - When one agent isn't enough: division of labor, orchestration
@@ -171,4 +167,4 @@ The core, hands-on section.
 # Thank You
 
 - Daniel Sánchez Pazmiño
-- Workshops for Ukraine — September 3, 2026
+- Workshops for Ukraine, September 3, 2026
