@@ -1,4 +1,5 @@
 slides/src/.quarto/
+/images/
 *.aux
 *.log
 *.nav
