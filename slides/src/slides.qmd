@@ -35,13 +35,6 @@ include-in-header:
 2. What's out there: tools and models
 3. Before we get started: cybersecurity basics
 4. Usage
-    - vibe coding & running regressions
-    - code review & file organization
-    - help your agent help you
-    - literature review
-    - writing review & SKILL.md
-    - skills from other researchers
-    - MCP for data access
 5. Cybersecurity: local models
 
 # AI, anyone?
@@ -67,17 +60,26 @@ include-in-header:
 - Subscriptions (e.g. Claude Pro/Max) come with usage caps; the API instead
   charges per token, pay only for what you use
 
-# Usage caps: the cake analogy
+# Usage limits: can you have your cake and eat it too?
 
-- Think of a subscription's weekly allowance as a whole cake baked for the
-  week
-  - Every prompt and every response cuts a slice
-  - Run out early, and there's no cake left until it resets
-- Two caps, not one:
-  - A **5-hour rolling window**: a small cake that resets every 5 hours
-  - A **weekly cap**: a big cake that has to last the whole week
-  - Hitting the 5-hour cap just pauses you; hitting the weekly cap means no
-    more cake until next week (or topping up via the API)
+- The AI company gives you one cake for the week
+  - Bigger subscriptions get bigger cakes: typical tiers run about \$20,
+    \$100, or \$200 a month
+  - Every prompt costs tokens: that's you taking a spoon and getting bites of
+    the cake
+- Most companies also cap you at 5-hour windows
+  - Instead of letting you eat straight off the cake, they cut it into
+    slices, one slice every 5 hours
+  - Genuinely, the most annoying limit
+- Companies differ in how permissive they are:
+  - Anthropic: not permissive at all; they don't own their own data centers,
+    so it's a markedly more expensive subscription
+  - OpenAI: lets you eat straight off the cake, no 5-hour slicing, but only
+    on the most expensive subscriptions
+  - Cursor: no slicing at all, you can eat the whole cake in one day if you
+    want
+- You can top up with extra usage, but it costs more per bite; past a point
+  it's worth moving to a bigger subscription instead
 
 # Vanilla AI vs. agentic AI
 
@@ -85,9 +87,7 @@ include-in-header:
 
 ::: columns
 ::: {.column width="35%"}
-![](images/parrot.jpg){width=100%}
-
-\scriptsize African grey parrot: mimics speech without understanding it\normalsize
+![](images/robot_photo.jpg){width=100%}
 :::
 ::: {.column width="65%"}
 - You paste in code or data, it replies with text
@@ -101,7 +101,13 @@ include-in-header:
 
 **Agentic AI (Claude Code, Codex, and friends)**
 
+```{=latex}
+\begin{center}
+```
 ![](images/hal9000.jpg){height=1in}
+```{=latex}
+\end{center}
+```
 
 - It gained *agency*: acts on its own, not just replying to you
 
@@ -169,8 +175,6 @@ include-in-header:
 :::
 ::: {.column width="35%"}
 ![](images/trojan_horse.jpg){width=100%}
-
-\scriptsize Tiepolo, *The Procession of the Trojan Horse in Troy* (1773)\normalsize
 :::
 :::
 
@@ -226,6 +230,12 @@ include-in-header:
 - Look for similar papers, and summarize them
   - best done using the "deep research" capability of agents
 - Use connectors/MCPs to investigate specific literature databases
+  - paper-search-mcp: MCP, CLI, and Skills in one; searches and downloads
+    from arXiv, PubMed, Google Scholar, Semantic Scholar, SSRN, and more
+  - scholar-mcp: queries Google Scholar directly, pulls metadata,
+    citation, and author info
+  - paperclip: full-text retrieval from arXiv, OSF, and OpenAlex,
+    converted to clean markdown for analysis
 
 # Usages: writing review and SKILL.md
 
@@ -281,5 +291,7 @@ include-in-header:
 - Goldsmith-Pinkham, P. *Skills: Specifying How an Agent Should Think*. A Causal Affair. [paulgp.substack.com/p/skills-specifying-how-an-agent-should](https://paulgp.substack.com/p/skills-specifying-how-an-agent-should)
 - Cunningham, S. *MixtapeTools*: tools for coding, teaching, and presentations with AI assistance. [github.com/scunning1975/MixtapeTools](https://github.com/scunning1975/MixtapeTools)
 - Sant'Anna, P. H. C. *claude-code-my-workflow*: a ready-to-fork Claude Code template for academics using LaTeX/Beamer + R. [github.com/pedrohcgs/claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow)
+- Image: D J Shin, tin wind-up "Robby the Robot" toy, Osaka Tin Toy Institute, Wikimedia Commons (CC BY-SA 3.0)
+- Image: Giovanni Domenico Tiepolo, *The Procession of the Trojan Horse in Troy* (1773), Wikimedia Commons (public domain)
 
 \normalsize
