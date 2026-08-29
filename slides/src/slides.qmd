@@ -62,11 +62,21 @@ include-in-header:
 
 # Usage limits: can you have your cake and eat it too?
 
+::: columns
+::: {.column width="35%"}
+![](images/cake.png){width=100%}
+:::
+::: {.column width="65%"}
 - The AI company gives you one cake for the week
   - Bigger subscriptions get bigger cakes: typical tiers run about \$20,
     \$100, or \$200 a month
   - Every prompt costs tokens: that's you taking a spoon and getting bites of
     the cake
+:::
+:::
+
+# Usage limits (cont.)
+
 - Most companies also cap you at 5-hour windows
   - Instead of letting you eat straight off the cake, they cut it into
     slices, one slice every 5 hours
@@ -293,5 +303,6 @@ include-in-header:
 - Sant'Anna, P. H. C. *claude-code-my-workflow*: a ready-to-fork Claude Code template for academics using LaTeX/Beamer + R. [github.com/pedrohcgs/claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow)
 - Image: D J Shin, tin wind-up "Robby the Robot" toy, Osaka Tin Toy Institute, Wikimedia Commons (CC BY-SA 3.0)
 - Image: Giovanni Domenico Tiepolo, *The Procession of the Trojan Horse in Troy* (1773), Wikimedia Commons (public domain)
+- Image: Ftiercel, birthday cake line art, Wikimedia Commons (CC BY-SA 3.0)
 
 \normalsize
