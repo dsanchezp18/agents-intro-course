@@ -15,7 +15,7 @@ include-in-header:
         \usepackage{tikz}
 ---
 
-# About Me
+# About me
 
 **Daniel Sánchez, MA**
 
@@ -44,7 +44,7 @@ include-in-header:
     - MCP for data access
 5. Cybersecurity: local models
 
-# AI, Anyone?
+# AI, anyone?
 
 - What people call "AI" today mostly means one thing: large language models
   (LLMs), not the general concept of "AI"
@@ -59,7 +59,7 @@ include-in-header:
   - Architecture: the Transformer (2017), which made training at that scale
     practical
 
-# A Word on Tokens
+# A word on tokens
 
 - Usage is metered in *tokens*: chunks of the text a model reads and writes
 - Every prompt and every response consumes tokens
@@ -67,7 +67,7 @@ include-in-header:
 - Subscriptions (e.g. Claude Pro/Max) come with usage caps; the API instead
   charges per token, pay only for what you use
 
-# Usage Caps: the Cake Analogy
+# Usage caps: the cake analogy
 
 - Think of a subscription's weekly allowance as a whole cake baked for the
   week
@@ -79,18 +79,25 @@ include-in-header:
   - Hitting the 5-hour cap just pauses you; hitting the weekly cap means no
     more cake until next week (or topping up via the API)
 
-# Vanilla AI vs. Agentic AI
+# Vanilla AI vs. agentic AI
 
 **Vanilla AI (ChatGPT, Claude.ai, a chat window)**
 
-![](images/robot.png){height=1.4in}
+::: columns
+::: {.column width="35%"}
+![](images/parrot.jpg){width=100%}
 
+\scriptsize African grey parrot: mimics speech without understanding it\normalsize
+:::
+::: {.column width="65%"}
 - You paste in code or data, it replies with text
 - You copy the suggestion back out, apply it yourself, rerun it yourself
 - It never sees whether its own suggestion actually worked
 - We've had it for a while, but at a certain point, it stops being *that* useful
+:::
+:::
 
-# Vanilla AI vs. Agentic AI (cont.)
+# Vanilla AI vs. agentic AI (cont.)
 
 **Agentic AI (Claude Code, Codex, and friends)**
 
@@ -106,7 +113,7 @@ include-in-header:
 
 # Why even care?
 
-- Point the AI to your paper folder: the sky's the limit. 
+- Point the AI to your paper folder: the sky's the limit
 
 - Read your raw data, write and run the cleaning script, and
   notice when a value label silently changed across survey waves
@@ -129,53 +136,60 @@ include-in-header:
 # What's out there
 
 - Terminal / CLI agents: Claude Code (Anthropic), Codex (Open AI), Cursor (now SpaceX), GitHub Copilot (Microsoft), etc.
-  - Each of these has its own desktop program version and/or IDE plugins.
+  - Each of these has its own desktop program version and/or IDE plugins
 
 - Non-technical agentic software:
   - ChatGPT Work
   - Claude Cowork
   - Copilot Cowork
 
-# And what about the "models"? 
+# And what about the "models"?
 
 - AI bros increasingly talk about "models"
 - In practice, the model is the "engine" that powers the agent
 - Anthropic: Haiku (fast), Sonnet (default), Opus (powerful)
 - OpenAI: Luna (fast), Terra (default), Sol (powerful)
 - Gemini: Gemini fast, Gemini pro
-- Grok, Kimi, Deepseek, so many more... 
+- Grok, Kimi, Deepseek, so many more...
 
 # Before we get started
 
+::: columns
+::: {.column width="65%"}
 - Cybersecurity is a real concern:
-  - Secret/private data with sensitive info (i.e. social security numbers) shouldn't be used into an agentic AI
+  - Secret/private data with sensitive info (e.g. social security numbers) shouldn't be used into an agentic AI
   - For this, there's *local* models, which we may discuss later,
 
-- Dont' paste stuff from webpages you don't trust into the agent, it may be malicious
+- Don't paste stuff from webpages you don't trust into the agent, it may be malicious
   - Prompt injection: trick your AI into doing something you didn't intend
 
 - An agent can delete your whole project folder if you tell it to
    - Generally they have a "classifier" which tells them whether a command is safe or not, but it can be tricked
    - Use Git!
-  
-![Giovanni Domenico Tiepolo, *The Procession of the Trojan Horse in Troy* (1773), public domain](images/trojan_horse.jpg){height=1.6in}
+:::
+::: {.column width="35%"}
+![](images/trojan_horse.jpg){width=100%}
 
-# Usages: Vibe coding a data cleaning script
+\scriptsize Tiepolo, *The Procession of the Trojan Horse in Troy* (1773)\normalsize
+:::
+:::
+
+# Usages: vibe coding a data cleaning script
 
 - Vibe coding: coined in 2025, means prompting the agent to write code while you watch and comment
   - The agent writes the code
   - You provide the vibes
 
 - Case study: 12 files of employment survey data from Ecuador
-  - We need to clean, select the right variables, and reshape it into a province-month panel.
+  - We need to clean, select the right variables, and reshape it into a province-month panel
 
-# Usages: Running some regressions
+# Usages: running some regressions
 
 - The agent can run the regression for you, and help you interpret the output
 - You can even use it for multiple specifications
   - Maybe you didn't have time before to code so many of them, now you do it in less than 10 mins
 
-# Usages: Code Review and File Organization
+# Usages: code review and file organization
 
 - One of the most painful things ever is reviewing a coauthor's code or some old code you wrote a year ago
   - The folders are a mess
@@ -195,7 +209,7 @@ include-in-header:
 # Usages: help your agent help you
 
 - Agents love markdown format instructions
-  - Markdown: 
+  - Markdown:
     - Use headings to separate tasks
     - Use bullet points to list instructions
     - Use code blocks for code snippets
@@ -204,25 +218,25 @@ include-in-header:
   - Tells what the agent should do, and how to do it
   - With Claude Code, AGENTS.md needs to be called CLAUDE.md
 
-- Write READMEs, replication manuals, etc. etc. etc. 
+- Write READMEs, replication manuals, etc. etc. etc.
 
-# Usages: Literature Review
+# Usages: literature review
 
 - Review an existing literature review
 - Look for similar papers, and summarize them
   - best done using the "deep research" capability of agents
 - Use connectors/MCPs to investigate specific literature databases
 
-# Usages: Writing Review and SKILL.md
+# Usages: writing review and SKILL.md
 
 - Arguable the worst ability of LLMs is writing a good paper
 - However, one can create a reproducible skill to teach the LLM to write like yourself
-- This is a skill: 
+- This is a skill:
   - A reusable prompt that can be used to write a paper in your style
   - Can be shared with other researchers, and they can adapt it to their own style
-- Ask the agent to look at your old papers, draft a SKILl and learn it. 
+- Ask the agent to look at your old papers, draft a SKILL, and learn it
 
-# Usages: Skills and Agents from Modern researchers
+# Usages: skills and agents from modern researchers
 
 - A few economists have already started to create skills and agents for their own research
 - Paul Goldsmith-Pinkham (Yale SOM): writes and teaches on this directly
@@ -236,26 +250,26 @@ include-in-header:
   Claude Code template for academic LaTeX/Beamer + R projects
   - Multi-agent review, quality gates, replication protocols built in
 
-# Usages: MCP for Data Access
+# Usages: MCP for data access
 
 - Ever had ChatGPT complain because it can't get you a specific datapoint?
   - Either it's private, or it's not easily reachable by an agent
 
 - MCPs are add-ons that allow agents to access specific data sources, like APIs or databases
-  - I.e. MCPs to access government data, or to access specific academic databases (i.e. JSTOR, Scopus, etc.)
+  - E.g. MCPs to access government data, or to access specific academic databases (e.g. JSTOR, Scopus, etc.)
   - Or MCPs to allow the agent to work more easily with other agents, (stata-mcp)
 
-- EcuDataMCP: allows to easily consult the Ecuadorian governemnt database
-- Similar MCPs available for US, Canada, etc. 
+- EcuDataMCP: allows to easily consult the Ecuadorian government database
+- Similar MCPs available for US, Canada, etc.
 
-# Cybersecurity: Local models
+# Cybersecurity: local models
 
 - Increasingly, researchers are thinking of ways on how to leverage the power of agents with restricted data
 
-- Private datasets (i.e. tax records) contain sensitive information, and cannot be shared with external agents
+- Private datasets (e.g. tax records) contain sensitive information, and cannot be shared with external agents
 
 - For this reason, open source models (Kimi, Llama) can potentially be installed and deployed in a local (powerful) computer
-  - Most models aren't open source (i.e. Claude, ChatGPT, Gemini, Copilot), and require sending your data to the cloud
+  - Most models aren't open source (e.g. Claude, ChatGPT, Gemini, Copilot), and require sending your data to the cloud
   - Open source vs. open weights: true "open source" require the weights to be available, not just the code
   - Open source models are not as powerful, and depend highly on your hardware capabilities
   - Kimi is the strongest these days, but can change quickly
