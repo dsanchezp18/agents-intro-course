@@ -351,6 +351,8 @@ include-in-header:
     official Census Bureau server (demographics, geography)
   - [fred-mcp-server](https://github.com/stefanoamorelli/fred-mcp-server) - all
     800,000+ FRED time series (rates, macro indicators)
+  - [mcp-bea](https://github.com/shawndrake2/mcp-bea) - GDP, personal income,
+    regional accounts (early-stage: 1 commit, use with caution)
 - Europe: [eurostat-mcp](https://github.com/ano-kuhanathan/eurostat-mcp) - Eurostat
   statistics via the SDMX API
 - Latin America: [ibge-br-mcp](https://github.com/SidneyBissoli/ibge-br-mcp) - Brazil's
