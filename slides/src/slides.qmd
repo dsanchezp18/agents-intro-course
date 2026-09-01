@@ -305,6 +305,13 @@ include-in-header:
   - Can be shared with other researchers, and they can adapt it to their own style
 - Ask the agent to look at your old papers, draft a SKILL, and learn it
 
+- My own example: `daniel-voice`, built from three of my own papers
+  - Two registers, academic prose vs. everyday correspondence, picked
+    automatically from the type of output requested
+  - Encodes concrete tics: no em dashes, hedge interpretation but never
+    methodology, always name a limitation near the claim it limits
+  - [github.com/dsanchezp18/ai-configs-daniel](https://github.com/dsanchezp18/ai-configs-daniel)
+
 # Usages: skills and agents from modern researchers
 
 - A few economists have already started to create skills and agents for their own research
