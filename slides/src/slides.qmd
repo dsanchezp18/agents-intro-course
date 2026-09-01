@@ -315,23 +315,27 @@ include-in-header:
 # Usages: skills and agents from modern researchers
 
 - A few economists have already started to create skills and agents for their own research
-- Paul Goldsmith-Pinkham (Yale SOM): writes and teaches on this directly
+- [Paul Goldsmith-Pinkham](https://som.yale.edu/faculty-research/faculty-directory/paul-goldsmith-pinkham)
+  (Yale SOM): writes and teaches on this directly
   - Runs "Using AI in Research and Teaching," a course at Yale SOM
   - Substack series on building and using SKILL.md skills for research
-- Scott Cunningham (Baylor, *Causal Inference: The Mixtape*): publishes actual
-  skills, not just posts about them
+- [Scott Cunningham](https://www.scunning.com/) (Baylor, *Causal Inference:
+  The Mixtape*): publishes actual skills, not just posts about them
   - MixtapeTools: a public repo of skills (coding audits, deck-building,
     bib-checking, and more)
 
 # Usages: skills and agents from modern researchers (cont)
 
-- Pedro H.C. Sant'Anna (Emory, of Callaway-Sant'Anna DiD fame): a ready-to-fork
-  Claude Code template for academic LaTeX/Beamer + R projects
+- [Pedro H.C. Sant'Anna](https://economics.emory.edu/people/faculty/biography/sant-anna-pedro.html)
+  (Emory, of Callaway-Sant'Anna DiD fame): a ready-to-fork Claude Code
+  template for academic LaTeX/Beamer + R projects
   - Multi-agent review, quality gates, replication protocols built in
-- Aniket Panjwani (*The AI Economist* newsletter): good intro videos on YouTube,
-  interesting/good tweets on AI workflows, etc.
+- [Aniket Panjwani](https://aniketpanjwani.com/) (*The AI Economist*
+  newsletter): good intro videos on YouTube, interesting/good tweets on AI
+  workflows, etc.
   - [aieconomist.io](https://aieconomist.io)
-  - Emergent Ventures grant (2025) for teaching AI to economists
+  - [Emergent Ventures grant (2025)](https://marginalrevolution.com/marginalrevolution/2025/12/emergent-ventures-winners-50th-cohort.html)
+    for EconNow, an AI data platform for economists
 
 # Usages: MCP for data access
 
@@ -369,8 +373,6 @@ include-in-header:
 
 # Usages: what about Stata?
 
-\footnotesize
-
 - Stata is closed source and licensed per seat: an agent can't install it for
   itself the way it can `pip install` or `install.packages()`
 
@@ -384,6 +386,8 @@ include-in-header:
     extracts estimation results and graphs, not just log text
   - [github.com/hanlulong/stata-mcp](https://github.com/hanlulong/stata-mcp)
 
+# Usages: what about Stata? (cont)
+
 - Caveats of closed-source software with agentic AI:
   - The agent can't read Stata's internals to debug an obscure error the way
     it can read an R package's source on GitHub
@@ -393,8 +397,6 @@ include-in-header:
     structured objects
   - Less, and staler, Stata documentation for models to have trained on,
     compared to open-source tools
-
-\normalsize
 
 ```{=latex}
 \section{Local Models}
@@ -419,6 +421,13 @@ include-in-header:
 - Goldsmith-Pinkham, P. *Skills: Specifying How an Agent Should Think*. A Causal Affair. [paulgp.substack.com/p/skills-specifying-how-an-agent-should](https://paulgp.substack.com/p/skills-specifying-how-an-agent-should)
 - Cunningham, S. *MixtapeTools*: tools for coding, teaching, and presentations with AI assistance. [github.com/scunning1975/MixtapeTools](https://github.com/scunning1975/MixtapeTools)
 - Sant'Anna, P. H. C. *claude-code-my-workflow*: a ready-to-fork Claude Code template for academics using LaTeX/Beamer + R. [github.com/pedrohcgs/claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow)
+
+\normalsize
+
+# References (cont)
+
+\footnotesize
+
 - Panjwani, A. *The AI Economist*: teaching agentic coding to economists. [aieconomist.io](https://aieconomist.io)
 - Wiebe, M. *Can AI do replications? GPT5.2 vs GPT5.4 vs refine.ink*. [blog.michaelwiebe.com/p/can-ai-do-replications-gpt52-vs-gpt54](https://blog.michaelwiebe.com/p/can-ai-do-replications-gpt52-vs-gpt54)
 - Sánchez Pazmiño, D. *ai-configs-daniel*: my own Claude Code configuration (CLAUDE.md, skills, agents). [github.com/dsanchezp18/ai-configs-daniel](https://github.com/dsanchezp18/ai-configs-daniel)
