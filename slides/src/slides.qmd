@@ -288,6 +288,12 @@ include-in-header:
   Claude Code template for academic LaTeX/Beamer + R projects
   - Multi-agent review, quality gates, replication protocols built in
 
+# Usages: skills and agents from modern researchers (cont)
+
+- Aniket Panjwani (PhD, Northwestern): runs [The AI Economist](https://aieconomist.io),
+  teaches agentic coding for economists on YouTube and a Skool community
+  - Emergent Ventures grant (2025) for teaching AI to economists
+
 # Usages: MCP for data access
 
 - Ever had ChatGPT complain because it can't get you a specific datapoint?
@@ -319,6 +325,7 @@ include-in-header:
 - Goldsmith-Pinkham, P. *Skills: Specifying How an Agent Should Think*. A Causal Affair. [paulgp.substack.com/p/skills-specifying-how-an-agent-should](https://paulgp.substack.com/p/skills-specifying-how-an-agent-should)
 - Cunningham, S. *MixtapeTools*: tools for coding, teaching, and presentations with AI assistance. [github.com/scunning1975/MixtapeTools](https://github.com/scunning1975/MixtapeTools)
 - Sant'Anna, P. H. C. *claude-code-my-workflow*: a ready-to-fork Claude Code template for academics using LaTeX/Beamer + R. [github.com/pedrohcgs/claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow)
+- Panjwani, A. *The AI Economist*: teaching agentic coding to economists. [aieconomist.io](https://aieconomist.io)
 - Wiebe, M. *Can AI do replications? GPT5.2 vs GPT5.4 vs refine.ink*. [blog.michaelwiebe.com/p/can-ai-do-replications-gpt52-vs-gpt54](https://blog.michaelwiebe.com/p/can-ai-do-replications-gpt52-vs-gpt54)
 - Sánchez Pazmiño, D. *ai-configs-daniel*: my own Claude Code configuration (CLAUDE.md, skills, agents). [github.com/dsanchezp18/ai-configs-daniel](https://github.com/dsanchezp18/ai-configs-daniel)
 - Image: D J Shin, tin wind-up "Robby the Robot" toy, Osaka Tin Toy Institute, Wikimedia Commons (CC BY-SA 3.0)
