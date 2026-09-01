@@ -344,12 +344,46 @@ include-in-header:
 
 - Canada: [mcp-canada](https://github.com/ReyemTech/mcp-canada) - federal, provincial,
   and municipal open data (StatCan, Bank of Canada, and more)
-- United States: [bls-labor-mcp-server](https://github.com/cyanheads/bls-labor-mcp-server) -
-  Bureau of Labor Statistics (CPI, unemployment, wages, JOLTS)
+- United States:
+  - [bls-labor-mcp-server](https://github.com/cyanheads/bls-labor-mcp-server) - Bureau
+    of Labor Statistics (CPI, unemployment, wages, JOLTS)
+  - [us-census-bureau-data-api-mcp](https://github.com/uscensusbureau/us-census-bureau-data-api-mcp) -
+    official Census Bureau server (demographics, geography)
+  - [fred-mcp-server](https://github.com/stefanoamorelli/fred-mcp-server) - all
+    800,000+ FRED time series (rates, macro indicators)
 - Europe: [eurostat-mcp](https://github.com/ano-kuhanathan/eurostat-mcp) - Eurostat
   statistics via the SDMX API
 - Latin America: [ibge-br-mcp](https://github.com/SidneyBissoli/ibge-br-mcp) - Brazil's
   IBGE geographic, demographic, and statistical data
+
+\normalsize
+
+# Usages: what about Stata?
+
+\footnotesize
+
+- Stata is closed source and licensed per seat: an agent can't install it for
+  itself the way it can `pip install` or `install.packages()`
+
+- Command line running: the simplest option, no MCP needed
+  - Run a `.do` file in batch mode: `stata-mp -b do analysis.do`
+  - The agent reads the resulting `.log` file to see output and errors, then
+    edits the `.do` file and reruns
+
+- stata-mcp: a proper MCP server for richer interaction
+  - Starts a real Stata session, runs commands, inspects data in memory, and
+    extracts estimation results and graphs, not just log text
+  - [github.com/hanlulong/stata-mcp](https://github.com/hanlulong/stata-mcp)
+
+- Caveats of closed-source software with agentic AI:
+  - The agent can't read Stata's internals to debug an obscure error the way
+    it can read an R package's source on GitHub
+  - Syntax changes across Stata versions (14 through 19); the agent may not
+    know which one is actually installed on your machine
+  - `.log`/`.smcl` output wasn't designed for machine parsing, unlike R/Python's
+    structured objects
+  - Less, and staler, Stata documentation for models to have trained on,
+    compared to open-source tools
 
 \normalsize
 
@@ -379,6 +413,7 @@ include-in-header:
 - Panjwani, A. *The AI Economist*: teaching agentic coding to economists. [aieconomist.io](https://aieconomist.io)
 - Wiebe, M. *Can AI do replications? GPT5.2 vs GPT5.4 vs refine.ink*. [blog.michaelwiebe.com/p/can-ai-do-replications-gpt52-vs-gpt54](https://blog.michaelwiebe.com/p/can-ai-do-replications-gpt52-vs-gpt54)
 - Sánchez Pazmiño, D. *ai-configs-daniel*: my own Claude Code configuration (CLAUDE.md, skills, agents). [github.com/dsanchezp18/ai-configs-daniel](https://github.com/dsanchezp18/ai-configs-daniel)
+- Han, L. (OpenEcon team). *awesome-ai-for-economists*: curated list of AI tools for economics research, teaching, and policy. [github.com/hanlulong/awesome-ai-for-economists](https://github.com/hanlulong/awesome-ai-for-economists)
 - Image: D J Shin, tin wind-up "Robby the Robot" toy, Osaka Tin Toy Institute, Wikimedia Commons (CC BY-SA 3.0)
 - Image: Giovanni Domenico Tiepolo, *The Procession of the Trojan Horse in Troy* (1773), Wikimedia Commons (public domain)
 - Image: Ftiercel, birthday cake line art, Wikimedia Commons (CC BY-SA 3.0)
