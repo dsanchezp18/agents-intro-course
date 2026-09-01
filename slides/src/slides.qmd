@@ -341,12 +341,10 @@ include-in-header:
 
 \footnotesize
 
-- Seven of his skills, copied into this course's repo: `examples/santanna-skills/`
+- Five of his skills, copied into this course's repo: `examples/santanna-skills/`
 
 - `replication-package`: assembles a submission-ready deposit (AEA DCAS /
   openICPSR standard): README, dataset manifest, table/figure to script:line map
-- `audit-reproducibility`: numerically checks a paper's reported numbers
-  against what the code actually produces, PASS/FAIL per claim
 - `respond-to-referees`: drafts a response letter, matching each referee
   comment to the specific revision that addresses it
 - `review-paper`: a full manuscript review, with an optional simulated
@@ -355,8 +353,6 @@ include-in-header:
   extraction and gap identification
 - `stata-replication`: scaffolds and runs a full Stata `.do` pipeline via
   `stata-mcp`, producing publication-ready tables and figures
-- `data-management-plan`: drafts a funder-compliant Data Management Plan
-  (NSF, NIH, ERC, Horizon Europe) for a grant proposal
 
 \normalsize
 

@@ -1,6 +1,6 @@
 # Example skills from Pedro H. C. Sant'Anna's Claude Code workflow
 
-Seven example `SKILL.md` files taken from Pedro H. C. Sant'Anna's
+Five example `SKILL.md` files taken from Pedro H. C. Sant'Anna's
 [claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow)
 repository (MIT licensed), a ready-to-fork Claude Code template for academic
 economists working in LaTeX/Beamer + R/Stata.
@@ -14,11 +14,7 @@ empirical research can look like:
   referee report and the revised manuscript.
 - `lit-review/` — structured literature search and synthesis with citation
   extraction.
-- `audit-reproducibility/` — verifies that a paper's reported numbers
-  reproduce from its code.
 - `stata-replication/` — Stata-specific replication pipeline conventions.
-- `data-management-plan/` — drafts a data management plan for a grant or
-  IRB application.
 - `review-paper/` — comprehensive manuscript review, including a simulated
   peer-review pipeline (editor + referees + editorial decision).
 
