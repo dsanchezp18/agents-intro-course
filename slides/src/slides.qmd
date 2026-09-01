@@ -337,6 +337,32 @@ include-in-header:
   - [Emergent Ventures grant (2025)](https://marginalrevolution.com/marginalrevolution/2025/12/emergent-ventures-winners-50th-cohort.html)
     for EconNow, an AI data platform for economists
 
+# Usages: what do Sant'Anna's example skills do?
+
+- Copied seven of his skills into this course's repo: `examples/santanna-skills/`
+
+- `replication-package`: assembles a submission-ready deposit (AEA DCAS /
+  openICPSR standard), with a README, dataset manifest, and a table/figure
+  to script:line map
+- `audit-reproducibility`: numerically checks that a paper's reported
+  numbers actually match what the code produces, PASS/FAIL per claim
+- `respond-to-referees`: drafts a response-to-referees letter, matching
+  each referee comment to the specific revision that addresses it
+- `review-paper`: a full manuscript review, with an optional simulated
+  peer-review mode (editor plus two referees plus a decision)
+
+# Usages: what do Sant'Anna's example skills do? (cont)
+
+- `lit-review`: structured literature search and synthesis, with citation
+  extraction and gap identification
+- `stata-replication`: scaffolds and runs a full Stata `.do` file pipeline
+  via `stata-mcp`, producing publication-ready tables and figures
+- `data-management-plan`: drafts a funder-compliant Data Management Plan
+  (NSF, NIH, ERC, Horizon Europe) for a grant proposal
+
+- These are illustrative examples of what a skill can look like in
+  practice, not necessarily ready to use out of the box
+
 # Usages: MCP for data access
 
 - Ever had ChatGPT complain because it can't get you a specific datapoint?
