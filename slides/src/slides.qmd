@@ -6,6 +6,7 @@ date: 2026-09-03
 theme: berlin
 date-format: "MMMM D, YYYY"
 format: beamer
+section-titles: false
 fontsize: 10pt
 include-in-header:
     - text: |
@@ -335,7 +336,22 @@ include-in-header:
   - Or MCPs to allow the agent to work more easily with other agents, (stata-mcp)
 
 - EcuDataMCP: allows to easily consult the Ecuadorian government database
-- Similar MCPs available for US, Canada, etc.
+- Similar MCPs exist for other countries/regions
+
+# Usages: MCP for data access (cont)
+
+\footnotesize
+
+- Canada: [mcp-canada](https://github.com/ReyemTech/mcp-canada) - federal, provincial,
+  and municipal open data (StatCan, Bank of Canada, and more)
+- United States: [bls-labor-mcp-server](https://github.com/cyanheads/bls-labor-mcp-server) -
+  Bureau of Labor Statistics (CPI, unemployment, wages, JOLTS)
+- Europe: [eurostat-mcp](https://github.com/ano-kuhanathan/eurostat-mcp) - Eurostat
+  statistics via the SDMX API
+- Latin America: [ibge-br-mcp](https://github.com/SidneyBissoli/ibge-br-mcp) - Brazil's
+  IBGE geographic, demographic, and statistical data
+
+\normalsize
 
 ```{=latex}
 \section{Local Models}
