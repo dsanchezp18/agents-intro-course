@@ -391,8 +391,6 @@ include-in-header:
 
 # Usages: MCP for data access (cont)
 
-\footnotesize
-
 - Canada: [mcp-canada](https://github.com/ReyemTech/mcp-canada) - federal, provincial,
   and municipal open data (StatCan, Bank of Canada, and more)
 - United States: [us-gov-open-data-mcp](https://github.com/lzinga/us-gov-open-data-mcp) -
@@ -403,8 +401,6 @@ include-in-header:
   statistics via the SDMX API
 - Latin America: [ibge-br-mcp](https://github.com/SidneyBissoli/ibge-br-mcp) - Brazil's
   IBGE geographic, demographic, and statistical data
-
-\normalsize
 
 # Usages: what about Stata?
 
@@ -451,13 +447,9 @@ include-in-header:
 
 # References
 
-\footnotesize
-
 - Goldsmith-Pinkham, P. *Skills: Specifying How an Agent Should Think*. A Causal Affair. [paulgp.substack.com/p/skills-specifying-how-an-agent-should](https://paulgp.substack.com/p/skills-specifying-how-an-agent-should)
 - Cunningham, S. *MixtapeTools*: tools for coding, teaching, and presentations with AI assistance. [github.com/scunning1975/MixtapeTools](https://github.com/scunning1975/MixtapeTools)
 - Sant'Anna, P. H. C. *claude-code-my-workflow*: a ready-to-fork Claude Code template for academics using LaTeX/Beamer + R. [github.com/pedrohcgs/claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow)
-
-\normalsize
 
 # References (cont)
 
