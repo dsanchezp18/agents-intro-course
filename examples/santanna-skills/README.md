@@ -1,6 +1,6 @@
 # Example skills from Pedro H. C. Sant'Anna's Claude Code workflow
 
-Five example `SKILL.md` files taken from Pedro H. C. Sant'Anna's
+Six example `SKILL.md` files taken from Pedro H. C. Sant'Anna's
 [claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow)
 repository (MIT licensed), a ready-to-fork Claude Code template for academic
 economists working in LaTeX/Beamer + R/Stata.
@@ -17,5 +17,7 @@ empirical research can look like:
 - `stata-replication/` — Stata-specific replication pipeline conventions.
 - `review-paper/` — comprehensive manuscript review, including a simulated
   peer-review pipeline (editor + referees + editorial decision).
+- `proofread/` — read-only grammar/typo/consistency pass over `.tex` or
+  `.qmd` files, producing a report without editing.
 
 Full repository, license, and remaining skills: see the source link above.

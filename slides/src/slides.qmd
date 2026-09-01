@@ -341,7 +341,7 @@ include-in-header:
 
 \footnotesize
 
-- Five of his skills, copied into this course's repo: `examples/santanna-skills/`
+- Six of his skills, copied into this course's repo: `examples/santanna-skills/`
 
 - `replication-package`: assembles a submission-ready deposit (AEA DCAS /
   openICPSR standard): README, dataset manifest, table/figure to script:line map
@@ -353,6 +353,8 @@ include-in-header:
   extraction and gap identification
 - `stata-replication`: scaffolds and runs a full Stata `.do` pipeline via
   `stata-mcp`, producing publication-ready tables and figures
+- `proofread`: read-only grammar/typo/consistency pass over `.tex` or
+  `.qmd` files, produces a report without editing
 
 \normalsize
 

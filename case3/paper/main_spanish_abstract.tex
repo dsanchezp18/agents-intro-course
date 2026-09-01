@@ -1,0 +1,105 @@
+\documentclass[a4,12pt]{article}
+
+% ======================== Preamble ======================== %
+
+% Language ---------------------------------------------
+
+\usepackage{csquotes}
+\usepackage[american]{babel}
+
+% Packages for title metadata ----------------------
+
+\usepackage{authblk}
+\usepackage{titlesec}
+
+% Title metadata ---------------------------------
+
+\title{ ¿Los créditos tributarios a la inversión fomentan la innovación? El Alberta Investor Tax Credit y solicitudes de patentes \\[1ex]
+\large Original: Do investment tax credits foster innovation? The Alberta Investor Tax Credit and patent applications}
+\author{Daniel Sánchez Pazmiño}
+\affil{Simon Fraser University}
+\date{Abril 2024}
+
+% Formatting -----------------------------------
+
+\usepackage{setspace} % For double spacing
+    \doublespacing
+\usepackage[margin = 1in]{geometry} % For setting margins
+\usepackage{libertinus} % Libertinus font for the whole document
+\usepackage{lscape} % For landscape pages
+\usepackage{hyperref} % For hyperlinks
+
+% Misc packages -----------------------------------
+
+\usepackage{lipsum} % For generating dummy text
+\usepackage{comment} % For commenting out large sections of text
+
+% Redefinitions -----------------------------------
+
+% Redefine abstract to not include a title and to display the text in italics
+\renewenvironment{abstract}
+ {\small
+  \begin{center}
+  \vspace{-1em}\vspace{0pt}
+  \end{center}
+  \quotation\itshape}
+ {\endquotation}
+
+ % Tables -----------------------------------
+
+% Modelsummary tables
+
+\usepackage{booktabs}
+\usepackage{siunitx}
+\newcolumntype{d}{S[
+    input-open-uncertainty=,
+    input-close-uncertainty=,
+    parse-numbers = false,
+    table-align-text-pre=false,
+    table-align-text-post=false
+ ]}
+
+\usepackage{threeparttable}
+
+% Figures -----------------------------------
+
+\usepackage{float}
+\usepackage{graphicx}
+
+% Packages for file structure ----------------------
+
+\usepackage{subfiles} % Includes the \subfix command which is like here() in R
+
+% Bibiliography -----------------------------------
+
+% Needs to be included so the TeX file compiles on VS Code
+%\usepackage[reflist, style = windycity, backend = biber]{biblatex}
+%\usepackage[backend = bibtex, style = windycity]{biblatex}
+\usepackage[authordate, backend = bibtex]{biblatex-chicago}
+%\usepackage[backend = biber, style = apa]{biblatex}    
+    \addbibresource{\subfix{references.bib}}
+    \addbibresource{\subfix{datasets.bib}}
+
+\usepackage{url}
+  \urlstyle{same}
+
+% ======================== Document: Main ======================== %
+
+\begin{document}
+
+% Title
+
+\maketitle
+
+% Abstract
+\begin{abstract}
+    El derrame de conocimiento generado por los esfuerzos de investigación desincentiva la inversión del sector privado en la misma, lo que ha motivado un gran apoyo a las soluciones públicas para promover la innovación. Si bien la literatura sobre créditos tributarios a gastos de investigación y desarrollo (I+D) es extensa, otras políticas no han recibido la misma atención. Utilizando un estimador de diferencia-en-diferencias de efectos fijos de doble vía, investigo el impacto del Alberta Investor Tax Credit (AITC), que ofrecia un crédito tributario a negocios innovadores de Alberta, Canadá. Las estimaciones muestran que después de la implementación del AITC, las solicitudes a patentes de partes interesadas de Alberta no incrementaron de manera significativa, sugiriendo que la intervención no tuvo éxito aumentando la innovación.  
+\end{abstract}
+
+% Sections ----------------------------------------------------------------
+
+\subfile{\subfix{sections/6_acknowledgements}}
+
+\clearpage
+
+\end{document}

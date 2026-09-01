@@ -1,0 +1,165 @@
+\documentclass[12pt,a4paper]{article}
+
+% ======================== Preamble ======================== %
+
+% Language ---------------------------------------------
+
+\usepackage{csquotes}
+\usepackage[american]{babel}
+
+% Packages for title metadata ----------------------
+
+\usepackage{authblk}
+
+% Title metadata ---------------------------------
+
+\title{Do investment tax credits foster innovation? \\[1ex] The Alberta Investor Tax Credit and patent applications}
+\author{Daniel Sánchez Pazmiño \\[1ex] ECON899 MA Paper}
+\affil{Simon Fraser University}
+\date{April 2024}
+
+% Formatting -----------------------------------
+
+\usepackage{setspace} % For double spacing
+    \doublespacing
+\usepackage[margin = 1in]{geometry} % For setting margins
+\usepackage{libertinus} % Libertinus font for the whole document
+\usepackage{lscape} % For landscape pages
+\usepackage{hyperref} % For hyperlinks
+
+% Misc packages -----------------------------------
+
+\usepackage{lipsum} % For generating dummy text
+\usepackage{comment} % For commenting out large sections of text
+
+% Redefinitions -----------------------------------
+
+% Redefine abstract to not include a title and to display the text in italics
+\renewenvironment{abstract}
+ {\small
+  \begin{center}
+  \vspace{-1em}\vspace{0pt}
+  \end{center}
+  \quotation\itshape}
+ {\endquotation}
+
+ % Tables -----------------------------------
+
+% Modelsummary tables
+
+\usepackage{booktabs}
+\usepackage{siunitx}
+\newcolumntype{d}{S[
+    input-open-uncertainty=,
+    input-close-uncertainty=,
+    parse-numbers = false,
+    table-align-text-pre=false,
+    table-align-text-post=false
+ ]}
+
+\usepackage{threeparttable}
+
+% Figures -----------------------------------
+
+\usepackage{float}
+\usepackage{graphicx}
+
+% Packages for file structure ----------------------
+
+\usepackage{subfiles} % Includes the \subfix command which is like here() in R
+
+% Bibiliography -----------------------------------
+
+% Needs to be included so the TeX file compiles on VS Code
+%\usepackage[reflist, style = windycity, backend = biber]{biblatex}
+%\usepackage[backend = bibtex, style = windycity]{biblatex}
+\usepackage[authordate, backend = bibtex]{biblatex-chicago}
+%\usepackage[backend = biber, style = apa]{biblatex}    
+    \addbibresource{\subfix{references.bib}}
+    \addbibresource{\subfix{datasets.bib}}
+
+\usepackage{url}
+  \urlstyle{same}
+
+% ======================== Document: Main ======================== %
+
+\begin{document}
+
+% Title
+
+\maketitle
+
+% Abstract
+\begin{abstract}
+   % The idea that positive knowledge spillover from research efforts disincentivizes its private sector investment has led to widespread support for fiscal incentives to promote innovation. Although the literature on research and development (R\&D) tax credits is extensive, alternative innovation policy has been understudied. Using a two-way fixed effects difference-in-differences estimator, I investigate the impact of the Alberta Investor Tax Credit (AITC), which offered a tax credit for investments in innovative businesses. Estimates show that after the AITC implementation, patent applications from Albertan parties did not increase significantly, suggesting that the intervention was unsuccessful in fostering innovation. 
+
+    The idea that positive knowledge spillover from research efforts disincentivizes its private sector investment has led to widespread support for fiscal incentives to promote innovation. Although the literature on research and development (R\&D) tax credits is extensive, alternative innovation policy has been understudied. Using a two-way fixed effects difference-in-differences estimator, I investigate the impact of the Alberta Investor Tax Credit (AITC), which offered a tax credit for investments in innovative businesses. Estimates show that after the AITC implementation, patent applications from Albertan parties increased for human necessity and textile inventions, yet decreased for fixed construction patent applications, creating a total null effect in patent applications.
+\end{abstract}
+
+
+\clearpage
+
+% Sections ----------------------------------------------------------------
+
+% Introduction
+
+\subfile{\subfix{sections/1_introduction}}
+
+% Institutional background 
+
+\subfile{\subfix{sections/2_institutional_background}}
+
+% Empirical strategy
+
+\subfile{\subfix{sections/3_empirical_strategy}}
+
+% Results 
+
+\subfile{\subfix{sections/4_results}}
+
+% Conclusion
+
+\subfile{\subfix{sections/5_conclusion}}
+
+% Acknowledgements
+
+\subfile{\subfix{sections/6_acknowledgements}}
+
+\clearpage
+
+% References
+
+\printbibliography
+
+\clearpage
+
+% Appendices ----------------------------------------------------------------
+
+\setcounter{section}{0}
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+
+% Appendix A: Data sources and other descriptive statistics
+
+\subfile{\subfix{sections/7_appendixA_descriptive_stats}}
+
+\clearpage
+
+% Appendix B: interested parties
+
+\subfile{\subfix{sections/8_appendixB_parties_models}}
+
+\clearpage
+
+% Appendix C: Monthly panels
+
+\subfile{\subfix{sections/9_appendixC_month_panel_models}}
+
+% Appendix D: IPC Sections
+
+\subfile{\subfix{sections/10_appendixD_ipc_sections}}
+
+\clearpage
+
+\end{document}
