@@ -220,6 +220,24 @@ include-in-header:
 
 \footnotesize [Holcombe, R. G., & Boudreaux, C. J. (2015). Regulation and corruption. *Public Choice*, 164, 75-85.](https://link.springer.com/article/10.1007/s11127-015-0263-x)\normalsize
 
+# Usages: code review and file organization (cont)
+
+- Example prompt to ask an agent to check a paper's methods and code:
+
+\footnotesize
+
+> "Evaluate the main results in the paper. For each result, ask: Is the
+> method conceptually sound? Does the code correctly implement the method?
+> Make sure to point out anything that could be a fatal flaw; e.g. if the
+> code works assuming the panel is balanced, but fails when the panel is
+> unbalanced, then flag this as a serious problem, because panel data is
+> often unbalanced."
+
+\normalsize
+
+- Source: Michael Wiebe, *Can AI do replications? GPT5.2 vs GPT5.4 vs refine.ink*.
+  [blog.michaelwiebe.com/p/can-ai-do-replications-gpt52-vs-gpt54](https://blog.michaelwiebe.com/p/can-ai-do-replications-gpt52-vs-gpt54)
+
 # Usages: help your agent help you
 
 - Agents love markdown format instructions
@@ -301,6 +319,8 @@ include-in-header:
 - Goldsmith-Pinkham, P. *Skills: Specifying How an Agent Should Think*. A Causal Affair. [paulgp.substack.com/p/skills-specifying-how-an-agent-should](https://paulgp.substack.com/p/skills-specifying-how-an-agent-should)
 - Cunningham, S. *MixtapeTools*: tools for coding, teaching, and presentations with AI assistance. [github.com/scunning1975/MixtapeTools](https://github.com/scunning1975/MixtapeTools)
 - Sant'Anna, P. H. C. *claude-code-my-workflow*: a ready-to-fork Claude Code template for academics using LaTeX/Beamer + R. [github.com/pedrohcgs/claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow)
+- Wiebe, M. *Can AI do replications? GPT5.2 vs GPT5.4 vs refine.ink*. [blog.michaelwiebe.com/p/can-ai-do-replications-gpt52-vs-gpt54](https://blog.michaelwiebe.com/p/can-ai-do-replications-gpt52-vs-gpt54)
+- Sánchez Pazmiño, D. *ai-configs-daniel*: my own Claude Code configuration (CLAUDE.md, skills, agents). [github.com/dsanchezp18/ai-configs-daniel](https://github.com/dsanchezp18/ai-configs-daniel)
 - Image: D J Shin, tin wind-up "Robby the Robot" toy, Osaka Tin Toy Institute, Wikimedia Commons (CC BY-SA 3.0)
 - Image: Giovanni Domenico Tiepolo, *The Procession of the Trojan Horse in Troy* (1773), Wikimedia Commons (public domain)
 - Image: Ftiercel, birthday cake line art, Wikimedia Commons (CC BY-SA 3.0)
