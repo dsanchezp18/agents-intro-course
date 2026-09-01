@@ -13,6 +13,20 @@ include-in-header:
         \setbeamertemplate{caption}[numbered]
         \usecolortheme[named=black]{structure}
         \usepackage{tikz}
+        \setbeamertemplate{footline}{%
+          \leavevmode%
+          \hbox{%
+          \begin{beamercolorbox}[wd=.35\paperwidth,ht=2.5ex,dp=1.5ex,left,leftskip=1em]{author in head/foot}%
+            \usebeamerfont{author in head/foot}\insertshortauthor
+          \end{beamercolorbox}%
+          \begin{beamercolorbox}[wd=.55\paperwidth,ht=2.5ex,dp=1.5ex,center]{title in head/foot}%
+            \usebeamerfont{title in head/foot}\insertshorttitle
+          \end{beamercolorbox}%
+          \begin{beamercolorbox}[wd=.10\paperwidth,ht=2.5ex,dp=1.5ex,right,rightskip=1em]{date in head/foot}%
+            \usebeamerfont{date in head/foot}\insertframenumber{}/\inserttotalframenumber{}
+          \end{beamercolorbox}}%
+          \vskip0pt%
+        }
 ---
 
 # About me
@@ -36,6 +50,10 @@ include-in-header:
 3. Before we get started: cybersecurity basics
 4. Usage
 5. Cybersecurity: local models
+
+```{=latex}
+\section{Introduction}
+```
 
 # AI, anyone?
 
@@ -149,6 +167,10 @@ include-in-header:
 
 - It doesn't know what cybersecurity or data privacy rules apply to your data, so you still have to be careful
 
+```{=latex}
+\section{Tools and Models}
+```
+
 # What's out there
 
 - Terminal / CLI agents: Claude Code (Anthropic), Codex (Open AI), Cursor (now SpaceX), GitHub Copilot (Microsoft), etc.
@@ -167,6 +189,10 @@ include-in-header:
 - OpenAI: Luna (fast), Terra (default), Sol (powerful)
 - Gemini: Gemini fast, Gemini pro
 - Grok, Kimi, Deepseek, so many more...
+
+```{=latex}
+\section{Cybersecurity Basics}
+```
 
 # Before we get started
 
@@ -187,6 +213,10 @@ include-in-header:
 ![](images/trojan_horse.jpg){width=100%}
 :::
 :::
+
+```{=latex}
+\section{Usage}
+```
 
 # Usages: vibe coding a data cleaning script
 
@@ -284,14 +314,15 @@ include-in-header:
   skills, not just posts about them
   - MixtapeTools: a public repo of skills (coding audits, deck-building,
     bib-checking, and more)
-- Pedro H.C. Sant'Anna (Emory, of Callaway-Sant'Anna DiD fame): a ready-to-fork
-  Claude Code template for academic LaTeX/Beamer + R projects
-  - Multi-agent review, quality gates, replication protocols built in
 
 # Usages: skills and agents from modern researchers (cont)
 
-- Aniket Panjwani (PhD, Northwestern): runs [The AI Economist](https://aieconomist.io),
-  teaches agentic coding for economists on YouTube and a Skool community
+- Pedro H.C. Sant'Anna (Emory, of Callaway-Sant'Anna DiD fame): a ready-to-fork
+  Claude Code template for academic LaTeX/Beamer + R projects
+  - Multi-agent review, quality gates, replication protocols built in
+- Aniket Panjwani (*The AI Economist* newsletter): good intro videos on YouTube,
+  interesting/good tweets on AI workflows, etc.
+  - [aieconomist.io](https://aieconomist.io)
   - Emergent Ventures grant (2025) for teaching AI to economists
 
 # Usages: MCP for data access
@@ -305,6 +336,10 @@ include-in-header:
 
 - EcuDataMCP: allows to easily consult the Ecuadorian government database
 - Similar MCPs available for US, Canada, etc.
+
+```{=latex}
+\section{Local Models}
+```
 
 # Cybersecurity: local models
 
