@@ -31,6 +31,13 @@ applied, not a deep dive into how LLMs work or general software engineering.
      the PDF file directly usually doesn't work here (image extraction can
      misfire on this beamer output), so always go through `pdftoppm`.
   3. Fix anything wrong, re-render, and re-check the affected pages.
+- The deck uses raw `\section{...}` blocks (see near "Introduction",
+  "Tools and Models", etc.) purely to populate Berlin's headline nav
+  dots/progress indicator. `section-titles: false` in the YAML header must
+  stay set, or pandoc's default `\AtBeginSection{\frame{\sectionpage}}`
+  reappears and nests a broken sectionpage frame inside the preceding
+  frame (raw `\section` blocks land inside the prior frame's content, not
+  between frames), rendering as a stray black box at the bottom of a slide.
 
 ## Git
 
