@@ -283,6 +283,23 @@ include-in-header:
 
 - Write READMEs, replication manuals, etc. etc. etc.
 
+# Usages: converting documents to markdown
+
+- Agents read markdown/plain text far better than PDFs, `.docx`, or scans:
+  cleaner input means fewer misreadings and less wasted context
+
+- Two ways to convert a document:
+  - **Web-based**: upload to a hosted converter (e.g. Jina Reader). Fast, no
+    setup, but the document leaves your machine
+  - **Local**: convert on your own computer, nothing is sent anywhere
+    - [markitdown](https://github.com/microsoft/markitdown) (Microsoft):
+      PDF, Word, Excel, images, audio, all to markdown, one command
+    - [docling](https://github.com/docling-project/docling) (IBM/LF AI):
+      stronger on complex layouts and tables
+
+- Rule of thumb: public papers, either is fine. Anything confidential
+  (survey microdata, unpublished drafts, admin records): always local
+
 # Usages: literature review
 
 - Review an existing literature review
