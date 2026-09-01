@@ -374,15 +374,10 @@ include-in-header:
 
 - Canada: [mcp-canada](https://github.com/ReyemTech/mcp-canada) - federal, provincial,
   and municipal open data (StatCan, Bank of Canada, and more)
-- United States:
-  - [bls-labor-mcp-server](https://github.com/cyanheads/bls-labor-mcp-server) - Bureau
-    of Labor Statistics (CPI, unemployment, wages, JOLTS)
-  - [us-census-bureau-data-api-mcp](https://github.com/uscensusbureau/us-census-bureau-data-api-mcp) -
-    official Census Bureau server (demographics, geography)
-  - [fred-mcp-server](https://github.com/stefanoamorelli/fred-mcp-server) - all
-    800,000+ FRED time series (rates, macro indicators)
-  - [mcp-bea](https://github.com/shawndrake2/mcp-bea) - GDP, personal income,
-    regional accounts (early-stage: 1 commit, use with caution)
+- United States: [us-gov-open-data-mcp](https://github.com/lzinga/us-gov-open-data-mcp) -
+  300+ tools across 40+ federal APIs (Treasury, FRED, Census, BLS, BEA,
+  Congress.gov, FDA, CDC, and more); unofficial, AI-assisted tool
+  definitions, so verify unfamiliar endpoints
 - Europe: [eurostat-mcp](https://github.com/ano-kuhanathan/eurostat-mcp) - Eurostat
   statistics via the SDMX API
 - Latin America: [ibge-br-mcp](https://github.com/SidneyBissoli/ibge-br-mcp) - Brazil's
