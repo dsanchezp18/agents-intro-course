@@ -1,6 +1,6 @@
 ---
 title: A Mostly Harmless Introduction to Claude Code, Codex and Friends
-subtitle: For Empirical Researchers
+subtitle: Workshops for Ukraine
 author: Daniel Sánchez Pazmiño
 date: 2026-09-03
 theme: berlin
