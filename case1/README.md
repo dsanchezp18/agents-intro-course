@@ -24,3 +24,4 @@ Links shared during the "Agentic coding Workshop" (2026-09-03):
 - [paper-search-mcp](https://github.com/openags/paper-search-mcp) — MCP/CLI/Skills for searching academic papers
 - [ai-configs-daniel](https://github.com/dsanchezp18/ai-configs-daniel) — Daniel's AI tool configs
 - [claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow) — Claude Code template for academics (LaTeX/Beamer + R)
+- [econ899](https://github.com/dsanchezp18/econ899) — replication materials referenced in case3's paper
