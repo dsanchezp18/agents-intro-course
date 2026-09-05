@@ -1,0 +1,770 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  english,
+  10pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Latin Modern Roman}
+  \setsansfont[]{Latin Modern Sans}
+  \setmonofont[]{Latin Modern Mono}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifPDFTeX
+\else
+\babelfont{rm}[]{Latin Modern Roman}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+
+
+
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={A Mostly Harmless Introduction to Claude Code{,} Codex{,} and Friends},
+  pdfauthor={Daniel Sánchez Pazmiño},
+  pdflang={en},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{A Mostly Harmless Introduction to Claude Code, Codex, and
+Friends}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Study guide for empirical researchers}
+\author{Daniel Sánchez Pazmiño}
+\date{}
+\begin{document}
+\maketitle
+
+
+\subsection{Overview}\label{overview}
+
+This workshop introduces agentic AI for empirical research. The central
+distinction is between a static chat model, which answers questions
+inside a chat window, and an agent that can inspect a local project,
+write files, run commands, and examine the results. The examples focus
+on data cleaning, statistical code, legacy replication repositories,
+literature review, reusable instructions, connectors, and local models.
+
+The recording is a practical orientation rather than a complete course
+in any one software package. The most useful habit it recommends is to
+keep the researcher in charge: give the agent a bounded task, inspect
+what it changed, run the analysis yourself, and verify the result
+against the research question.
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
+
+The source transcript was generated automatically and lightly cleaned.
+Product names and code terms have been normalized from context where
+speech recognition was uncertain. Examples below are adapted from the
+demonstration and are not presented as verbatim screen captures.
+
+\end{tcolorbox}
+
+\subsection{Learning objectives}\label{learning-objectives}
+
+After studying this guide, you should be able to:
+
+\begin{itemize}
+\tightlist
+\item
+  distinguish a chat model from an agent with access to a project and
+  terminal;
+\item
+  choose a sensible first workflow for an R, Python, Stata, or mixed
+  research repository;
+\item
+  write bounded prompts that reduce unnecessary decisions and token use;
+\item
+  protect confidential data and recognize prompt injection as a security
+  risk;
+\item
+  use Git, plans, permissions, and project instructions to make agent
+  work recoverable;
+\item
+  apply an agent to data cleaning, code review, legacy code,
+  replication, and literature search;
+\item
+  understand when an MCP connector, a reusable skill, or a local model
+  is appropriate.
+\end{itemize}
+
+\subsection{Prerequisites and scope}\label{prerequisites-and-scope}
+
+The talk assumes basic familiarity with files, a terminal, and at least
+one research tool such as R, RStudio, Python, Stata, or MATLAB. A local
+agent is most useful when the corresponding software is installed,
+because the agent uses the computer's own programs to execute code. Some
+hosted agent features also require a paid subscription.
+
+The examples use a local folder containing compressed Ecuadorian
+employment-survey files, R scripts, a legacy replication project, a
+paper in PDF form, and supporting research material. The exact project
+is less important than the pattern: an agent works best when the source
+files, instructions, scripts, and outputs are visible in one bounded
+project.
+
+\subsection{1. From static chat to an
+agent}\label{from-static-chat-to-an-agent}
+
+A static model can explain a function, summarize text, or suggest code.
+It is constrained by what is pasted or uploaded to the chat and usually
+cannot inspect the actual state of a local research project. An agent
+adds a loop around the model:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  inspect files and available tools;
+\item
+  propose or write a change;
+\item
+  run a command or statistical program;
+\item
+  inspect the output;
+\item
+  revise the work when the result does not match the request.
+\end{enumerate}
+
+That loop is the important change. An agent can read raw data, create a
+cleaning script, call R from a terminal, and inspect the resulting CSV.
+It can also organize folders or explain an old repository. A chat model
+may describe those steps, but it does not automatically perform them on
+the researcher's computer.
+
+The talk uses a cake analogy for token limits. A subscription provides a
+limited allocation of tokens, and more complex prompts and longer files
+consume more of that allocation. Stronger models can be useful for
+planning or difficult review, while a faster model is often enough for
+routine implementation. The practical lesson is to spend context
+carefully: give the agent the relevant files and a precise task instead
+of asking it to make every decision from scratch.
+
+An adapted version of the workshop's first project prompt might look
+like this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Inspect the files in case\_one. They are monthly compressed employment{-}survey files.}
+\NormalTok{Create a clean dataset with one row per Ecuadorian province and one column per month.}
+\NormalTok{Calculate median labour income using the survey weights. Preserve the raw files,}
+\NormalTok{explain every transformation, and tell me which commands you ran.}
+\end{Highlighting}
+\end{Shaded}
+
+The prompt defines the input, the unit of observation, the outcome, and
+a safety constraint. It still leaves room for the agent to inspect the
+data dictionary and ask about an ambiguity, but it does not ask for an
+unbounded research project.
+
+\subsection{2. Security, confidentiality, and
+recoverability}\label{security-confidentiality-and-recoverability}
+
+An online agent may work with local files, but information it reads can
+still be sent to the provider. The talk therefore advises against using
+online agents with social-security numbers, health identifiers,
+personally identifiable information, or data protected by a data-sharing
+agreement. A local open-source model can keep data on the researcher's
+computer, but it requires suitable hardware and a more involved setup.
+
+Prompt injection is a second risk. Untrusted web pages, documents, or
+copied text can contain instructions aimed at the agent rather than
+information for the researcher. A request to summarize a page can
+therefore carry hidden instructions to open files, disclose information,
+or run a command. Treat external content as data, not as an instruction
+source, and use only sources you trust.
+
+Agents can also make ordinary mistakes with serious consequences. A
+mistaken command can overwrite files, delete a folder, or apply a
+transformation to the wrong data. The talk recommends several layers of
+protection:
+
+\begin{itemize}
+\tightlist
+\item
+  use Git or another recoverable backup for code and important project
+  files;
+\item
+  work in a bounded project folder and use a sandbox when available;
+\item
+  select a plan or manual permission mode for unfamiliar tasks;
+\item
+  ask the agent to explain what it did and preserve raw inputs;
+\item
+  run tests and inspect the code before trusting a result.
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-warning-color!10!white, colframe=quarto-callout-warning-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-warning-color}{\faExclamationTriangle}\hspace{0.5em}{Warning}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
+
+An agent's confidence is not evidence that an analysis is correct. The
+researcher remains responsible for the specification, identification
+strategy, variable definitions, statistical assumptions, and final
+interpretation.
+
+\end{tcolorbox}
+
+\subsection{3. A safe first workflow in a project
+folder}\label{a-safe-first-workflow-in-a-project-folder}
+
+The demonstration opens a local folder in Claude Code, points the agent
+to the workshop repository, and asks it to inspect the first case. The
+same pattern applies to Codex, Cursor, and GitHub Copilot: open the
+project, state the task, let the agent inspect before editing, and keep
+the raw data separate from derived outputs.
+
+The agent can use a graphical application or a terminal. Working from a
+terminal inside RStudio is useful when the researcher wants to keep the
+familiar IDE in view. The command shown in the talk is conceptually
+equivalent to starting the agent from the current project directory:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cd}\NormalTok{ path\textbackslash{}to\textbackslash{}research{-}project}
+\NormalTok{claude}
+\end{Highlighting}
+\end{Shaded}
+
+The exact command depends on the installed CLI. The important property
+is the working directory: the agent should start inside the repository
+it is meant to inspect.
+
+Three operating modes are especially useful:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Automatic mode:} convenient for a routine, well-bounded task
+  when the project is backed up.
+\item
+  \textbf{Manual mode:} the agent asks before running commands or making
+  changes.
+\item
+  \textbf{Plan mode:} the agent writes a proposed sequence without
+  implementing it, which is useful for a large or uncertain change.
+\end{itemize}
+
+The recording also discusses memory. A provider may retain preferences
+from previous conversations if memory is enabled. This can make later
+work more consistent, but it can also preserve a mistaken assumption.
+Inspect, correct, or disable memory when the project requires a clean
+context.
+
+Project instructions are a more explicit and portable control. Claude
+Code reads \texttt{CLAUDE.md}; other agents commonly read
+\texttt{AGENTS.md}. A small file at the repository root can say, for
+example:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{\# Project instructions}
+
+\SpecialStringTok{{-} }\NormalTok{Write readable, script{-}first statistical code.}
+\SpecialStringTok{{-} }\NormalTok{Preserve raw data and explain derived files.}
+\SpecialStringTok{{-} }\NormalTok{Run the relevant checks before reporting completion.}
+\SpecialStringTok{{-} }\NormalTok{Ask before changing the research specification.}
+\SpecialStringTok{{-} }\NormalTok{Use the project\textquotesingle{}s preferred language and naming conventions.}
+\end{Highlighting}
+\end{Shaded}
+
+The talk recommends keeping these instructions close to the project and
+updating them as new model behaviour creates new problems. They are not
+a substitute for review, but they reduce repeated corrections.
+
+For code, a minimal recoverability cycle is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{git}\NormalTok{ status}
+\FunctionTok{git}\NormalTok{ add path/to/intended/files}
+\FunctionTok{git}\NormalTok{ commit }\AttributeTok{{-}m} \StringTok{"Save validated analysis change"}
+\end{Highlighting}
+\end{Shaded}
+
+These commands are a compact illustration of the principle discussed in
+the talk: create a checkpoint before allowing an agent to make a
+substantial change, and keep the remote repository available as a
+recovery path.
+
+\subsection{4. Data cleaning and statistical
+code}\label{data-cleaning-and-statistical-code}
+
+The first live example begins with monthly compressed survey files from
+Ecuador. The agent unzips and organizes them, derives a province
+variable, identifies the income field, notices special or top-coded
+values, and writes R code to produce a province-by-month dataset. It
+also computes a survey-weighted median of labour income.
+
+This is valuable because the mechanical work is time-consuming, but the
+example also shows the limits of automation. The agent made decisions
+the speaker had not explicitly requested, including details of the
+weighted calculation. That can be helpful when the choice is correct and
+dangerous when it is not. The researcher should inspect the data
+dictionary, the handling of missing and special values, the survey
+design, and the final sample before using the result.
+
+The recommended division of labour is:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ask the agent to inspect and propose a transformation;
+\item
+  allow it to write a readable script and a short explanation;
+\item
+  open the script in RStudio or the relevant IDE;
+\item
+  run it in the actual research environment;
+\item
+  compare diagnostics and outputs with the intended design.
+\end{enumerate}
+
+The agent can run code through the terminal when R or another program is
+installed. It is not executing the analysis inside a magical cloud
+version of R. It is calling the researcher's local installation and then
+reading the result. This is why a missing R, Stata, or Python
+installation prevents the workflow from completing.
+
+The talk notes that language models are trained heavily on
+software-engineering code. They may therefore produce abstractions,
+loops, or modules that are technically valid but unnecessarily hard for
+a researcher to read. Readability is not cosmetic in empirical work: it
+supports review, replication, and later correction. State the preferred
+style in the prompt or in project instructions.
+
+\subsection{5. Legacy repositories, replication, and
+translation}\label{legacy-repositories-replication-and-translation}
+
+An agent is often most useful when the code already exists. The speaker
+points it to an old replication folder and asks for an explanation
+without running or modifying anything. This is a good first step for a
+repository that has not been opened for several years, or for a
+replication package downloaded from a journal.
+
+The agent can summarize the scripts, identify the data flow, locate
+graphs and side scripts, and explain how the final results are produced.
+It can also propose a translation from R or Python to Stata. Running
+Stata requires a valid local installation and, in the talk's workflow,
+an additional Stata MCP connector. The connection is described as less
+seamless than the one for open-source languages, partly because there is
+less public training material for some closed-source software.
+
+An adapted review prompt is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Review this legacy replication repository. Do not modify files and do not run code.}
+\NormalTok{Explain the data flow, the main scripts, the outputs, and any assumptions that}
+\NormalTok{would need to be checked before reproducing the reported results.}
+\end{Highlighting}
+\end{Shaded}
+
+For a real replication audit, the agent can go further: run the code,
+compare the reported tables with the generated output, locate
+inconsistencies, and propose a correction. The talk presents this as a
+way to make code review and replication checks less expensive. It still
+requires an expert to verify whether the code implements the paper's
+intended specification and whether the data and environment are
+comparable.
+
+\subsection{6. Literature review and document
+formats}\label{literature-review-and-document-formats}
+
+The workshop compares three common inputs for a literature task. A
+Markdown file is the easiest for an agent to read and costs less context
+than a PDF. A Word document is usually easier than a PDF. PDFs can be
+read, but layout, columns, tables, and scanned text make extraction more
+expensive and less reliable.
+
+For a paper already stored in a project, a sensible sequence is:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  convert the document to a reviewable text format when confidentiality
+  permits;
+\item
+  ask the agent to summarize the argument and identify the literature
+  gap;
+\item
+  ask it to search for additional papers or use a paper-search
+  connector;
+\item
+  inspect the papers and the proposed citations yourself;
+\item
+  write only the claims that the sources actually support.
+\end{enumerate}
+
+The talk mentions connectors for PubMed, Google Scholar, and other
+paper-search services. Some require an account or an institutional
+subscription. Install a connector only from a trusted source and limit
+it to the current project when the agent offers that choice.
+
+An adapted prompt for this workflow is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Read the paper text in case\_three. Summarize the literature review, identify}
+\NormalTok{unsupported or missing claims, and propose three papers to investigate. Do not}
+\NormalTok{rewrite the paper yet. Give the reason for each recommendation and distinguish}
+\NormalTok{what you verified from what needs my review.}
+\end{Highlighting}
+\end{Shaded}
+
+The goal is not to delegate the scholarly judgment. The agent can widen
+the search and reduce mechanical effort, but it cannot decide whether a
+contribution is genuinely new or whether a research design is credible.
+
+\subsection{7. Reusable instructions, skills, and
+MCPs}\label{reusable-instructions-skills-and-mcps}
+
+The talk separates three kinds of customization:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Project instructions:} files such as \texttt{CLAUDE.md} or
+  \texttt{AGENTS.md} that apply within a repository.
+\item
+  \textbf{Skills:} reusable Markdown instructions for a task such as
+  proofreading, reviewing a paper, humanizing text, creating a lecture,
+  checking a package, or reproducing an author's voice.
+\item
+  \textbf{MCPs:} connectors that give an agent an additional capability
+  or a structured way to access a source, such as a paper database, a
+  government data service, or Stata.
+\end{itemize}
+
+A skill is best understood as a reusable process description rather than
+a model or a program. It can specify the inputs, the sequence of checks,
+the output format, and the quality standard. The speaker describes
+building a writing-voice skill from several papers and then applying it
+to later drafts. The same pattern can be used for code conventions or a
+replication workflow.
+
+The maintenance cost matters. New model releases can introduce new
+habits, such as overly abstract code or an unnatural writing style.
+Treat instructions as living project assets: test them on a small task,
+review the output, and update them when a recurring failure appears.
+Keep project-specific rules in the project and general rules in a
+reusable skill.
+
+MCPs can extend an agent beyond its default tools, but they also expand
+the trust boundary. A connector that reads email, queries a data
+service, or runs Stata should be enabled only when needed, scoped to the
+smallest useful project, and reviewed like any other software
+dependency.
+
+\subsection{8. Local models and sensitive
+research}\label{local-models-and-sensitive-research}
+
+For restricted data, the talk recommends considering a local open-source
+model rather than sending information to an online provider. A
+university or employer may host a model for researchers so that data
+remains within its infrastructure. Individuals can also run smaller
+models, but the tradeoff is hardware: ordinary computers cannot run the
+most capable models at comfortable speed.
+
+The key distinction is not that a local model is automatically correct
+or safe. It changes where the data is processed. You still need access
+controls, backups, review, and a clear understanding of what software is
+running. A local model may also be weaker at niche statistical code, so
+the researcher should test it on representative tasks before relying on
+it.
+
+\subsection{Cheat sheet}\label{cheat-sheet}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Need
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Agent pattern
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Minimal example
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Inspect a project & Start in the project root and ask for an inventory &
+\texttt{Inspect\ the\ repository.\ Do\ not\ modify\ files.} \\
+Bound a task & State inputs, outputs, constraints, and checks &
+\texttt{Preserve\ raw\ files\ and\ report\ every\ transformation.} \\
+Protect changes & Use a checkpoint before a substantial edit &
+\texttt{git\ status} then a focused commit \\
+Control execution & Choose automatic, manual, or plan mode &
+\texttt{Plan\ the\ changes;\ do\ not\ implement\ yet.} \\
+Set preferences & Add repository instructions & \texttt{CLAUDE.md} or
+\texttt{AGENTS.md} \\
+Clean data & Ask for a script and diagnostics, then run it yourself &
+\texttt{Write\ the\ cleaning\ script\ and\ explain\ special\ values.} \\
+Understand legacy code & Request an explanation without edits first &
+\texttt{Explain\ the\ data\ flow;\ do\ not\ run\ or\ modify\ code.} \\
+Review replication & Compare paper claims, code, data, and outputs &
+\texttt{Identify\ mismatches\ and\ show\ how\ to\ verify\ them.} \\
+Search literature & Use text input and a scoped paper connector &
+\texttt{Propose\ papers\ and\ separate\ verified\ claims\ from\ leads.} \\
+Access structured data & Use a trusted data MCP &
+\texttt{Query\ the\ official\ source\ and\ save\ the\ raw\ response.} \\
+Protect restricted data & Use an approved local or institutional model &
+\texttt{Do\ not\ send\ this\ dataset\ to\ an\ external\ service.} \\
+\end{longtable}
+}
+
+\subsection{Final takeaways}\label{final-takeaways}
+
+Agentic AI is most useful in research when it removes mechanical
+friction without removing human control. Give it a bounded project,
+explicit instructions, and a recoverable working state. Let it inspect
+files, write scripts, run routine commands, explain legacy code, search
+sources, and produce drafts. Then verify the data, code, specification,
+citations, and interpretation yourself.
+
+The workshop's practical sequence is therefore: protect the project,
+state the task precisely, inspect the agent's plan, let it work within a
+defined boundary, run and review the result, and turn repeated
+preferences into project instructions or reusable skills. For
+confidential data, move the workflow to an approved local or
+institutional model rather than assuming that a local folder alone
+prevents external processing.
+
+\subsection{Resources named in the
+recording}\label{resources-named-in-the-recording}
+
+The recording discusses Claude Code, Codex, Cursor, GitHub Copilot,
+RStudio, Git, Stata MCP, paper-search MCPs, PubMed, Google Scholar,
+government-data MCPs, local open-source models, \texttt{CLAUDE.md}, and
+\texttt{AGENTS.md}. These names are retained as the workshop's resource
+map; no additional links have been added beyond what appears in the
+recording.
+
+
+
+
+\end{document}

@@ -1,0 +1,657 @@
+Today, as you may know, we have a session on agenti.ki, so code, codex, and other types of agenti.ki tools. Hopefully it will be useful to you because it's very popular now and very useful, and everyone is using all of these tools.
+
+If you have any questions at any point, feel free to write them in the chat or raise your hand. Also, I will send the recording and the materials afterwards. As usual, sometimes it takes me some time, but eventually we'll send it to everyone.
+
+But also, you should have received the link to the GitHub with the material already, and also it's in the chat right now. If you don't see the GitHub link in the chat, please let us know and we'll send it again.
+
+Also, if you're interested in other upcoming workshops, I'll share a link to my website. We have actually now quite a tight schedule with workshops every week for this month at least, in the beginning of next month. We will have workshop on like Bayesian panel vector auto-regressions in R, we'll have workshops on clinical child programming in R, and then we will have more others that will be added soon to the schedule.
+
+So, check it out if you're interested. Other than that, I think it's all good other than that. So, unless you have any other questions or comments or anything like that, we can start. So, once again, thank you so much for joining today.
+
+Since I don't see any questions, I think I can give the floor to Danielle. Thanks again. Thank you, Daria, for the introduction. Naturally, thank you everyone for being here. I'm happy to be here today, second time, actually. I was here with a late tech workshop about a year ago, a little bit more.
+
+And yes, well, I'm happy to introduce this topic, which is definitely very popular in the States. Also happy to see some familiar faces here connected. Well, without any further ado, without any further ado, maybe let's get started. Some housekeeping first.
+
+I have posted a GitHub repo, which has the material for the course. That is the slides and a little bit of the code that we'll be looking at for the workshop. Throughout, as we advance the presentation, I'll probably share some more links that are useful and well, if at any point you have any questions, feel free to just raise your hand.
+
+I might not be able to look at the chat. So apologies if there's any delay there, but yeah, feel free to raise your microphone if that is the case. Great. So well, our workshop today called Mostly Harmless Introduction to Codecs and Friends.
+
+Well, what we're going to talk about is the most or the relatively recent trend of agent and AI in your research. Just before that, I'll just introduce myself very briefly. I'm Daniel. I'm currently an economics statistician at the government of Alberta based in Edmonton, Canada.
+
+I got my MA in economics from Simon Fraser University, also in Canada. And I also co-direct the Ecuadorian Development Research Lab, which is a nonprofit based in the United States at Ecuador. I've been working with agent and AI for let's say about a year now and more recently with the very new trends in 2026.
+
+I've been developing MCPs for data access, particularly for Ecuador recently, and also have some experience training researchers and like general analysts and agent to AI. So yeah, happy to be here today. What we'll be covering is of course an intro about AI and what's the difference between your vanilla or static AI and the more recent agent to AI.
+
+I'll just briefly introduce tools and models, some cybersecurity basics, and naturally the meat of the workshop is in the usage of these tools. And I'll briefly go back to cybersecurity, which is probably of interest to a lot of people that work with very restricted data talking a little about local models.
+
+Well, as you probably already know, well, AI just became really, really popular lately. Let's talk since maybe 2022 when we had Chad GPT released in November. Well, that's when everyone started talking about AI, but naturally AI has been a thing for a while now and it's a very general term, which we can even use to describe machine learning regression.
+
+But what we call or what we are thinking about when we talk about AI is the generator of AI or what we call as large language models, such as PT, Claude, and all of those, they are relatively recent and only recently have been taking on even more importance because of their agentic capabilities.
+
+It's useful to think about how an LLM even works, because that way we sort of uncover the details of how it works and we can understand it a little bit more. It's an LLM is just trained to predict the next word from huge amounts of text and code that are embedded in the model's training.
+
+This is where we talk about tokens, which are essentially just groups of words that the LLM ingests and then outputs as its answer. In order for LLMs to evolve to the point that we have right now, we needed a lot of data and computing power, but also the architecture, which came out in 2017, a 2017 paper introduced the transformer and it wouldn't be as big as it is right now if it weren't for the transformer, a 2017 paper.
+
+So pretty interesting there. And naturally you might be thinking about what this token thing even means. Well, it is actually very important for the normal or average consumer because LLMs work with tokens in both ingesting them and outputting them.
+
+So when we talk about how much we can use a model based on what we pay as a subscription to the big companies, we're talking about a token limit. So the quantity that these companies sell to us is essentially tokens, words.
+
+And it's kind of depend on the subscription, the time of the day, but essentially every company gives us an allocation of tokens that we can consume in five hours or in a week. So every prompt, every request that we make to a large language model is going to use that token limit and naturally more complicated prompts are gonna take a little bit more tokens to process.
+
+So the subscriptions, as I said before, in for example, Claw Pro or Claw Max, it comes with a usage cap of tokens. Whereas the API usage was a little bit more advanced, it will charge you a certain amount of money per token.
+
+So this probably maybe sounds foreign to people who are just beginning in this, but it's important to keep in mind because as we move along, we're gonna see that the token limits are very important to make our own usage efficient.
+
+So the AI company, what it's gonna give us is essentially one cake. And we can eat that cake throughout the week. And bigger subscriptions, the more money you pay to Claw or to open AI, well, the bigger the cake is.
+
+So we generally have a $20 subscription that is USD that we pay monthly and that gives us sort of the smallest cake possible. That is the most basic subscription, which is actually pretty useful for most cases, but there's naturally for the heavy users, we have 100 and 200 subscriptions.
+
+That's the sort of where the market is at right now. And naturally, if you wanna consume even more cake at the end of the week, you can pay a little bit more, though at that point it becomes a little bit more expensive.
+
+So this cake, we can, as I was saying, they give you one full cake per week, but also they tell you you cannot just eat the cake in one sitting. They're gonna give you slices of that cake every five hours.
+
+That is what a lot of people complain about the five hour limits. They can be quite restrictive, especially if you're sitting down and working a lot on something. Once we hit that five hour limit, essentially we cannot consume any more tokens until the next reset of the five hour limit comes.
+
+And they have it pretty well distributed across the day so that it's difficult actually to get work done. Usually it's 2 p.m. that the first limit in the day resets. And then you can continue working throughout the day based on the limits.
+
+Right now, OpenAI has removed the five hour limit in their more expensive subscription. However, Anthropic and Cod, they will cause currently does have both five hour limits and weekly limits for the whole, for all of their subscriptions. Great.
+
+So, well, this is just going through what I was describing before. Anthropics, Cod in OpenAI, ChatGPT or Codex are the most popular subscriptions these days. However, we do have a lot more that allow you to do exactly the same thing.
+
+Another one which is very popular is Cursor, which is interesting in its limits because it gives you no slices at all. They give you a big cake and you can use it whatever way you want during one month.
+
+That makes it better in a certain sense because you don't hit these limits every five hours or every week. But you are liable to use the whole limit in one day if you are really, really into it. So, yeah, you have to be careful of their distributing your token usage being efficient or if you're willing just to give them your credit card and spend as much money as possible, that's also an option for sure.
+
+And, well, keeping that in mind, that applies for both chats and agent.ai, for most subscriptions that is. And it works very well to sort of talk and difference what an agent versus a static model is. Your vanilla or static AI is the AI that you probably already know.
+
+When we go, I'm gonna share again, that's great. When we go to chatGBT and you start chatting with it like this in the chat tab, this is where we're looking at a static model. A static model, essentially, for chatGBT actually doesn't even consume your limit because it is relatively limited on the stuff that it can do.
+
+As opposed to the agent, which in chatGBT is called the work mode, that is actually going to be able to use your limit. It is going to consume your five hour limit and it's going to have a lot more capabilities.
+
+Online, it can pull data from your Google Drive or it can pull data from your email if you have it connected or your Slack or Teams. And naturally, you can feed it, I mean, you can feed your GitHub repos, that is your code, so that the agent starts working with it online.
+
+When you download the chatGBT or the cloud app, you can point the agent, that is the work mode, to a particular folder where you may have a project, research project code, and then you can start doing things with it within your own computer that is working on the files that your computer has right now.
+
+Wallout has exactly a very similar interface. We have chat, which is the static AI, it can ask questions, you can ask the questions and it can do a web search, it's very useful. However, it is relatively limited in its capabilities because it does not have an agency, it does not have autonomy to work with your own files.
+
+There's a co-work tab, which is actually already an agent. It's a little bit more tailored towards non-technical users to do Excel spreadsheets or work with large amounts of information that is not code. Because we do have cloud code, which is the code tab in the app, that actually allows you to connect to a GitHub repo to the final work trees, branches, and whatever you prefer and work either locally or online, that is in the cloud, in GitHub's cloud.
+
+So most economists or any other empirical researcher are using cloud code, I would say, it's very popular right now, rather than the co-work or the chat versions of it. Mostly because co-work came out a little bit later in its tailored, as I mentioned, for non-technical users.
+
+Cloud code is actually gonna give us the opportunity to work with our GitHub repos more naturally, that is creating branches, pull requests, and all of that. And if you're not into that, like if you're not a common GitHub user, that's okay as well.
+
+You don't need to worry about that because you'll just point it to a local folder inside your own computer. So right now I have pointed it to the agents intro course folder within my computer, which is just the GitHub repo that I sent, but you can open any folder in your computer.
+
+As you can see, you're able to point it wherever you want. I have a bunch of Git repos here, and I could potentially choose this one. And I am able to now ask questions about this repo or this folder where I have code there.
+
+The agent is going to be able to organize, move things around, create new files, create new code files, and it can work with any programming language really, or software applications such as data or SPSS, because it is trained to be good at it.
+
+So naturally you're gonna face certain restrictions or let's say certain weaknesses, very niche types of languages, where the information that the model has is not as rich as an open source language, but I wanna say that for R, Stata, Python, Julia, the big ones, it's pretty decent at it, maybe a little bit less so with Stata, but in any case it's pretty usable.
+
+So this is the agent that I was talking about. The agents are now fully able to create things on your behalf, to read things on your behalf, to develop complicated tasks for you based on your instructions. Most importantly for our purposes, which would be running statistical code in your computer, it can read your files, that is data files, write code, let's say R and Stata to run a model or to clean some data, it can both write the code and it can use your computer's terminal to run the code and see the results.
+
+So that last step in the research sort of process, which is actually running the code and observing the results, as static AI such as like ChatGPT website, it cannot do it yet because it is limited to the web page, whereas an agent that is in your computer has full power to use your actual computer.
+
+You're live, all of the time. I think, I'm gonna mute someone here, I'll take no worries. Well, but continuing there, the agent as I said, it has full autonomy, it can run code on your behalf and it can examine the results of such code.
+
+And that can be both statistical code or PowerShell code to organize a folder, for example. So that is what really changes the game here and makes it so useful for empirical research. And as I said, well, why even care about this?
+
+What's even the difference? It's the autonomy, the possibility to use your computer that changes everything because now the sky's the limit. Anything that you could do manually with your own computer, now the agent can do as well. Really the last part that the agent cannot do is think about your research to develop a research paper or specification.
+
+But even though it cannot do that because it's not really human being, it can help you do it more efficiently. So a lot of time can be saved with that. Right, so as I said, it's still not a human being.
+
+It cannot reason. It seems like it's reasoning but it's really just predicting text. So there's a lot of things that you should not trust it to do very well. That is your own judgment on regression model or the whole research specification.
+
+It can do some things about it. It can help you organize your thoughts, for example, but it cannot be fully correct on that. Like all of the experience that you carry as a researcher that cannot be just transferred to an AI model, not at this time, I guess, but definitely you have to double check any sort of output that it has, any decision that it makes on its own.
+
+It's a good idea to always check it again. If the agent can read your files, how do we know it will preserve the confidentiality of the file components? So I will get into it once we get actually to use the model but one of the benefits of using an agent in your computer is that you don't have to upload the files to the company server.
+
+It can remain in your computer. However, the agent will still know and upload all of the information that it can gather from the files. So this is where we have to think about the way that we use other software tools.
+
+When you are using OneDrive, Dropbox, you are submitting things to the servers of the company and you sort of trust them with that and AI companies are not too different from Microsoft in that sense. They have privacy disclosures and data retention agreements of your information.
+
+Now, there is a lot of trust issues with them because they are known to be a little bit more, let's say, not as honest in the way that they manage information, we wouldn't know whether they are actually using the information to train the models.
+
+There's options that you can turn on or off to train the models with your information. However, I totally understand that a lot of people feel a little bit resistant to using these tools. Now, you can think of it in the same way that you think about Microsoft, but what I will definitely say is that you should not be using a model like this that it uses the internet with very private information.
+
+So if you're doing research with very, very confidential data, let's say social security numbers, health information that you actually have to go into a data lab to use, that's where these models are not really a very good option because obviously the model is going to ingest that information and send it to the company and a lot of data sharing agreements, they won't allow you to do that.
+
+So closer to the end of the workshop, I will describe what's the work around for that. And yeah, that's what I can say about, let's say cyber security for now. And naturally, as I said, there's a lot of gains to using agents to help you with your work.
+
+For most people, it's fewer hours lost to the very mechanical parts of research. Generally, you would hire an RA so that they would write your code, do the descriptive analysis under your data. Now, you can still hire the RA and the RA can use AI to make their own work faster or you can choose not to hire one and have AI do it.
+
+So that frees up your own time to focus on the parts of research that actually require your judgment and experience. So as I said before, there's a bunch of options out there, plot code very popular and I could arguably see that most academics are using plot code.
+
+Codex is a very, very large and or it's capturing a large share of the market as well. Codex is OpenAI's agentic programming assistant. Cursor, as I described before, is another option which is now owned by Elon Musk, SpaceX, I believe, and we also have GitHub Co-Pilot which is Microsoft's agentic programming assistant and GitHub Co-Pilot doesn't have any large language model.
+
+By itself, it's just aggregating other models such as Claw or GPT. Each of these has its own desktop version that you can download from their website and it's that desktop version that will allow you to point the agent towards your folders and start working.
+
+Or also we have a terminal version to work through the CLI which a lot of people like to use and I'll show you that in a second. We still have agents for non-technical people or aim towards non-technical work that is not code.
+
+Chad's GPT work, very recent, I think it has less than two months. Clock co-work, same thing as clock code, just bundled in a different way. We also have Co-Pilot co-work and Gemini Spark which is very new as well.
+
+These are less mature and not as useful in my opinion. Chad's GPT work and clock co-work are very mature, I would say at this point even though Chad's GPT work is pretty new, they are very mature and can do a lot of useful work.
+
+So you can use any of these, any that you want. For this workshop, I'll probably rely a little bit more on Codex but clock code, I'll open it as well and we'll go through it. When I've been talking about models, I've been probably a bit general.
+
+But if we get into the specifics of the models or what do we mean when we say models where we're talking about the engine that powers the agent. So these models, as I said, they're engines and they're specific to every company that has developed them in Tropic which who developed Claude, they have three different or four different models.
+
+Haiku is the very fast and sort of lightweight model that they have. I honestly don't really use it because it's a bit not as smart but it's useful for small things. Sonay, which is the very, let's say the workhorse of Entropic, very good.
+
+I use it all the time and it's made for any task really. And Opus and also Fable, Fable is another option. They are the most powerful models that you can use. Generally, it's a good idea to use them for planning, for planning or coding project or something like that rather than implementation because the more powerful or the smarter the model is, the more tokens is going to consume per prompt.
+
+So it's a good idea to be efficient with this. And that's why I took some time before to describe tokens and why they matter. When we move to OpenAI, it's also very useful and important to know what they have.
+
+Luna is the fast model, which is akin to Haiku from Anthropic. Luna is honestly an excellent model, very cheap to use in terms of how much it consumes of your limit. And it's relatively smart honestly. I've been using it a lot and it's very recommended.
+
+Terra is the default, which is once again akin to Sony and Sol is the most powerful one akin to Opus. For Gemini, which is Google's model, we have Gemini Fast and Gemini Pro. These are not as common because they don't have their own agent for now.
+
+And we have Grock, which is the Elon Musk model. Contrary to what you may be thinking, it's actually a very, very good model for a agent work. And mostly you can consume it using Cursure. Kimi is a Chinese open source model, very good.
+
+And the fact that it's open source means that it can run in any computer that can run it, meaning a powerful computer. And there's implementations of Kimi in the United States, Canada now, meaning that you don't have to use a China based server if you wanna use Kimi.
+
+So it's an excellent model. DeepSeq is another Chinese model, pretty decent in its agent capabilities as well, but I believe it's not open source or parts of it are not open source. And there's a lot more than you can use.
+
+I would say these are the bigger ones. And before we actually get started with the usage, I will go back around and talk about cybersecurity. You shouldn't be using any of these models with a secret or private data, social security number, health identifiers or any other type of personally added viable information.
+
+When you have to do your research with this or if you have a particular project which uses this very sensitive data, it's not a very good idea to use these models. It's rather a good idea to use local models, meaning open source models that companies have developed, but that you can take and run in your own computer so the data never leaves your own computer.
+
+It never goes to anyone's server but yours. And people are developing a lot of these as research solution. Universities are hosting their own open source local models for researchers in the university to actually be able to use an agent to help them with their research.
+
+So that's one of them and the solution is very easy. Just don't use any agents, any online, let's say agents with secret data. And the other part about cybersecurity with let's say less restricted data is do not paste stuff from web pages that you do not trust.
+
+Why? Because there's always a risk of prompt injection. Prompt injection means that you paste something that maybe you wanna summarize or you want to create and there's an hidden prompt that it's gonna tell your agent to do things you do not want.
+
+So prompt injection is a real risk and it emerged as a new let's say cybersecurity problem in the era of AI. So the only way honestly to be safeguarded from this is to not paste stuff that you don't know and don't trust.
+
+So it's fine to paste data or to use data from government websites and images and text. If you go to some, let's say pirating software website, you never know what you're downloading there. It might be just like, let's say worrying about a virus, a Trojan horse.
+
+You should worry about prompt injection as well. I will say that as time passes and new models are developed, companies are embedding very, very good cybersecurity let's say safeguards to allow your agent to realize that it's being prompt injected.
+
+So especially Claude, I would say it's very good at this. They have taken a lot of time to make sure that the model is safe, but there's always a risk. So just don't take the risk. Use only data and code that you trust.
+
+And the final, maybe not necessarily cybersecurity but a final warning that I will give you is that an agent can always make mistakes. So you should always double check its output, run tests on your code to see what it's doing.
+
+And most importantly, when an agent makes a mistake and it has access to your whole computer, it can do very, very bad things to your computer. Sometimes they're running code and they make a mistake and they're running code to delete a folder.
+
+They might run that command in a folder you don't want to delete and then you lose all of that information. How can you, let's say, protect yourself from this? I would say this is a problem, to spend more money on a better and smarter model that doesn't make these mistakes.
+
+I will say the models from the big companies that I have described are pretty good. I haven't had that happen to me, but if you use the less smart models, which are also the cheaper ones, they are liable to make mistakes.
+
+So what's the second sort of safeguard against that? Using Git. I'm not sure whether the people here are all familiar with Git. Git is a version control software designed to work well with code. And if you have everything in a GitHub repo and you're making comments all the time, well, even if you lose all of the information in your computer, of your research project, you still have the remote in GitHub to, let's say, go back to.
+
+And Git, it's its own thing and there's probably workshops about that too. If you don't know how to use it, honestly, AI uses it very well too, that can help you learn. So, excellent. Now that I went through the boring stuff, let's actually get started with some examples.
+
+So I'm gonna get started with Cloud Code right now, just because I know that it's the more popular model these days. So, this is the software that you can download from Anthropics webpage. Naturally, you do need a paid subscription to actually use it.
+
+That is to use the agent. And I'm gonna send you the link. If you don't have it in your computer yet. So after you paid for a subscription, you're gonna be able to use Cloud Code. You install that in your computer.
+
+I have a Windows computer right here. It works for any computer really, so no need to worry about that. I'm gonna create a new Cloud Code conversation. I'm going to point to a local folder where I have some code.
+
+And that would be the agents intro course. I'm just gonna use the same GitHub repo that I have for this workshop. I'm gonna select the folder and we are now working on this folder. Let me show you how the folder actually looks like.
+
+And this is something that you can clone yourself in your own computer. I have a bunch of use cases that we're gonna go through. We're gonna go through case one. Case one, all I've done here, and I'll all I've committed to GitHub so that you can have, is to download employment surveys from Ecuador.
+
+And they are downloaded directly from the statistical offices website. Meaning that I haven't done any data cleaning. I haven't done anything at all. They're just SIP files, compressed files that are currently sitting in my computer. So what I'm gonna do is I'm gonna code I'm gonna ask the agent to help me code data cleaning script to have a panel for every province in Ecuador with, I don't know, average income for workers in Ecuador for every month of 2025.
+
+If you wanna code this by hand, it probably would take you a while. And I would also need to unzip everything and organize it nicely the way that you would do normally. I don't actually need to do any of that.
+
+I'm just gonna ask the agent to do it. Okay, so I'm not gonna go through prompt engineering too much. What I recommend that you always do is to write an instruction or prompt in the, let's say the most specific way that you can telling the agent to do exactly what you want.
+
+Don't or try to not leave things up to the agents decisions because not because it might do something wrong necessarily but it might do things that you don't necessarily want and you wanna be efficient with your usage. How do you check your usage?
+
+You go to settings, usage and you have a five hour limit that I have right here and my weekly limit right here. So I'm gonna tell it to actually start cleaning the data. So we are working on a small.
+
+Go to the base one folder in this repo and inspect the data. They are monthly files. With the Ecuadorian and planning survey I'd like to build final clean data set that is, or that has every row as an Ecuadorian province and let's say columns for every month in the year.
+
+Get the median income. First, let's unzip the files organized nicely. Gonna have data over. So I've sent the prompt to Claude. Definitely I will share the prompts with you. I've taken my time to write this prompt so that we have the best results possible.
+
+Naturally you can be as general as you like or as specific as you like. The more general you are, probably the more decisions Claude is going to take here. So I recommend that if you want something good and fast you be specific, okay?
+
+So right now it's running whatever underlying code it needs because I've only asked it to unzip the files is using typical computer commands, PowerShell commands in this case to unzip the folders programmatically and put them organized in a folder.
+
+As it unzips the data it might find data dictionaries that the statistical office put there. It might not and as we go along with the exercise it might ask me for things. Claude is very good at asking for guidance to you.
+
+So it tries not to make any decisions on its own, okay? Notice that I've put Claude in auto mode meaning that it's going to handle every permission by itself. This is a fairly decent mode and it's the default these days for Claude to operate.
+
+And well, there's other options if you care more about actually supervising Claude into what it's doing. You can choose the manual mode which means that every time that it wants to run a command is going to ask you, should I run this command?
+
+And it's gonna give you a description of what it's trying to do so that you are able to understand or you're gonna be able to see the code that it's actually trying to run. Now, I can't imagine everyone here is an expert in PowerShell commands.
+
+So I honestly think auto is an excellent way to go. And well, there are other modes here that are, well, it will automatically accept any editing of files. This is relevant to when you're writing code, I think. And there's a plan mode which only writes an implementation plan that you can review and accept.
+
+Planning mode is very useful for complicated applications. Yeah, so depending on the task at hand, it's going to take a little bit of time because it already knows my own context which is that I work mostly in R.
+
+It's already trying to do things with R. Now, my hope is that it listens to me and only unzips the files. If I am, let's say, uncertain about the direction that this is going to go, I can always stop what it's doing and ask it to tell me what's happened.
+
+But let's see what happens now. It's just for context. I believe every, oh well, it's already trying to do a decent folder structure there. Again, this is because it already sort of knows me because I've been working with it for a while.
+
+To someone who's just started using it, it might do a different thing and you can sort of work with it as you go. And for next conversations, it will update its own memory to understand in what way you like to work.
+
+If, for example, you would not like to use R and you typically work with Stata, this would be part of that memory that Claude develops as you work more with it. Do I have a sense of what goes into its prior knowledge?
+
+For sure. There's options that you can turn on about the type of prior knowledge that it can gather. Because I've been working with it for a few months now, it's developed a memory of all my conversations. Why? Because I've actually turned on the memory capability.
+
+The memory capability that I've allowed Claude to use, essentially what it is that it searches and references chats that I've had in the past. And it generates a memory from those chats. If I didn't want that to happen because I want to clean slate every conversation, I could turn these off.
+
+Honestly, I find it very useful, but maybe some people don't want Claude to retain that information about themselves. So you can definitely turn these off. And let's say if you were changing providers, maybe you use ChatGPT in the past, you can even import the memory that other providers have had by copying and pasting this prompt into ChatGPT and then pasting the results in here.
+
+So I did that when I started using Claude a while ago. And well, you can always do this too. How do I see what it remembers? Well, here in the memory tab is actually going to list everything. For example, I have some preferences on how I prefer Claude to respond.
+
+This is something that it has gathered from what I've told it to do. And it has my profile context of what I do. And if I were to, let's say, notice that something's not right, I can always ask Claude to remove something that either I don't want it to remember that or that I see that it has hallucinated.
+
+Hallucination is common with AI models, meaning that they predict something that is not correct in reality. So I can always fix that if I notice it. So here, for example, it has organized specifically my research background, what I have done before.
+
+And there's a lot of stuff in there that it has remembered and it tells you to what date that information is valid or when did it updated last. So yeah, there's a lot of stuff here and you can always choose to not use it or use it.
+
+And chat GPT has exactly the same capabilities. It can generate a memory of your conversation. So this is why particularly this conversation is going the way that it's going right now. Now that it's done, it's going to give me an overview of what it just did, okay?
+
+Notice that it just went ahead a little bit. I didn't ask it to do it, but it did it. It had already built some R code to organize what I just told it to do, okay? And it tells me exactly how did it do it.
+
+It derived the province variable from this column in the SAP files and it actually, well, this is very interesting. It actually noticed that there's some top coding in the median income, well, in the income variable, which naturally is that if you have a minus one or this big number, it's probably a not valid information.
+
+And it even computed a survey weighted median labor income per province. I didn't ask it to do this, but it went ahead and did it by itself because it probably knows or can predict what's going to happen. If by any reason I didn't want this to go, I can always correct it and ask it to do it again to delete it or something like that, okay?
+
+And if we go to the actual folder, it's now created all of this. It's given me an R script built median income by province and it's given me the data folder where I have the raw files for every month.
+
+Notice that it's an SPSS file. This is the way that Ecuador gives you their implement data. So that's the way it is. And it even stored the compressed files just for reference, which is very useful because I might not like what it just did, okay?
+
+So this is very useful. Right now I already have everything in here and I can use our studio to actually inspect the code. You can always do that for sure. Let's actually take a look at the type of code that it wrote.
+
+This is a big sort of, I will open the file. Take a while, just give me a sec. Oh, there we go. So I can open the file that it just created for me, the R file. And I think it did it pretty well, you know?
+
+It looked up provinces, it created a mapping and used the code that I typically like to write because it's in my memory already. But I will say this, the type of coding that these models are trained on, it's not statistical coding, it's not econometrics coding.
+
+It is not very used to write that sense of code. Mostly it could, it's technically trained on software engineering code, which is something that I really dislike because it tends to do these abstractions and algorithms that I don't really enjoy honestly because it makes the code not very readable.
+
+You can always have preferences and tell it to do things the way that you like. Again, because it knows me already and I probably told it to change things so many times, it already did it the way that I like, but this will not necessarily happen all the time.
+
+Okay, but yeah, you know, probably this data cleaning is pretty decently done. Naturally, I would like to run the code myself in our studio and check, you know, I won't do that with the time that we have right now, but definitely something that I should be doing.
+
+Something important for people who are very used to their own IDEs, or if you're very used to working with our studio, very used to working with state, you don't necessarily always need to use the cloud app to interact with the agent.
+
+And a great, great, great question there. What's my own opinion about using cloud and its own app as opposed to our studio by opposite AI? And I'll go through the other question that I have from Russ Morrison about using it for research.
+
+It can definitely do it. So using cloud from the app is definitely nice because it has a very nice UI at this point. You can look at your own files right here. You can work with the get related things as well in here.
+
+So honestly, I think it's the best option in my opinion, but I do notice that the more abstracted you are from the code itself, the more you might be behaviorally motivated to just not care about the code, which is not a good idea if you're doing research, right?
+
+So there's always options and you can use code AI or any agent really with Posit AI, which is what the company that developed our studio has. It's a different setup. I haven't used it personally because I believe it's not necessary to actually spend money on a different provider.
+
+If you have your own provider such as Flawed or Codex, you can just use the terminal mode. So if you're, for example, in our studio and you have the terminal here, I can just change my working directory to where I am right now.
+
+And once I do that, I can actually start cloud via the terminal. And I only need to write Plawed and then I start working with it. So this is a different, less friendly to the eye way, but it can do exactly the same thing.
+
+I can write comps here, exactly the same way that I did it in here, okay? So if you wanna see everything in our studio and don't even wanna worry about different apps and providers and that whole thing, I recommend that you use the terminal mode.
+
+How to start it up. There's some commands there that you need to run. You need to download the CLI version of Cloud Code. And I'll give you a documentation for that. It's a very, very quick start. So if you want that for sure, go ahead.
+
+In my opinion, I really like using it in the app itself. But when I wanna look at the code, which is often I use this, which is the RStudio way. I just wanna do this because. So yeah. Great.
+
+So moving on from that. This is one of the many things that it can do. I could always use it to look something up if I don't like what I see, like look up the way that other people have calculated with my line.
+
+Get up, get left, and propose changes to the code. This is something that it can also do for sure. And this is related to the code still, but it can definitely go ahead and do that. It has web search capabilities too.
+
+And I could also tell it to start actually doing some sort of regression. We have a question. So no code actually run in a cloud. The environment needed to execute the R script exists only in RStudio. Well, not really, a cloud does run the code.
+
+In fact, it probably ran the code in order to produce the final output file, which is a CSV, right? So cloud has a capability of using your computer's programs to run code. Yes, so it definitely does have that capability.
+
+If it were the case that I don't have R installed in my computer, it cannot do what it just did. It would have to do it in some other way. So yes, code is actually run not within cloud, but cloud runs commands in the terminal to execute the code.
+
+So yeah, that is good to know because you do want cloud to run the code and verify its own results so that it can fix it. This is the difference between just doing it in the chat GBT website, okay?
+
+It can definitely ask a respond to a question like find previous research on Ecuadorian distribution across provinces. Definitely it can do that. It will do a web search on public papers or code on that or whatever. And it will give you a result and you could ask it to write a word document briefing you on those results.
+
+I'm gonna take some time on the third case, the use case about that, but yes, it can definitely do that. We'll get to that in a second. So yeah, it's just running some stuff in there. And I'll go briefly back to the slides.
+
+What I just did, which is writing code by not actually writing any live code, people have informally been calling it as a live coding because you only provide the vibes, you only tell it what to do. And it is the agent that actually writes the code.
+
+As I said, as a researcher, you're probably concerned about the exact way that the code is run. Maybe because you have to submit this later to a journal that asks for a replication package. So you can definitely run it within our studio or within somewhere else if you wanna care about that, okay?
+
+I can also ask it to run regressions. Maybe I wanna do a diff in this or something like that. I can ask it to do it for me. I can give it, let's say a plan to do this that I've designed.
+
+So I can just write it down somewhere in a word document and give it to them. Maybe you wrote up your methodology section already. You can tell Claude to read that in the folder and then execute the code version.
+
+And one of the best things that I find for this is that a lot of the times when we're writing a paper and we have to run some code for a regression or something like that, we don't have that much time to actually do all of the potential specifications that we would like to do.
+
+We only dedicate the time to a certain few maybe. So because those things are technically just mechanics, you can always ask Claude to run it for you instead, so that you can check the results of all of the potential options that you have.
+
+So that's very useful. It saves you a lot of time and it can augment your capabilities. And well, let's just, I'm already doing a code review here. It's running some research online to see whether what it did, it's correct.
+
+And it might just say everything's right, no changes. Otherwise, it might tell me, there's some people that have done this way. They have waited, survey in this way or they have done this with a different, let's say method.
+
+So that's a good way to do code review. Now, a very interesting use case here is to use existing replication packages on papers that you know and organize those. So for example, let's say you have some old code that you wrote, let's say three years ago and you wanna get back to it for whatever reason.
+
+You could point Claude to the folder where you have everything. I think I have a very, very old replication I tried to do when I was in undergrad, I have it here. I'm gonna point it there and I'm gonna tell it to review the code, explain it to me and then start working from there.
+
+One of the worst things of working with code is not actually, for a lot of people, it's not actually writing the code itself but using someone else's code or using your own code from a few years ago, which we call legacy code.
+
+So Claude can help you a lot with that. So I'm gonna ask it, see this folder. This is an old old project that I did to replicate a paper. Explain the code to me in a few seconds. You not run any code, you're not modifying the files, okay?
+
+I'm gonna put it in auto load, okay? And then it's gonna start up and it's gonna start doing these things, okay? Very useful, if you were to download a replication package from a journal's website, this is also an option, you just need to put it in your computer and point Claude to the correct place, okay?
+
+And there you go, it's explaining what I have right there. It's a replication of a paper in the journal public choice regulation and corruption. And the repo runs the paper's regressions on a more recent cross-country data set pulled from the World Bank.
+
+I only have one script there that is relevant. I run the code, do the regressions. I have some graphs in GTplot and I have some side scripts generating other stuff, okay? And I even have something other than R.
+
+I have something in Python. So it's an informal exploratory student replication, okay? And let's get to the interesting stuff now. Let's say I don't really write code in R, in IAMs data person. I don't know anything about R, so it would be very difficult for me to start generating the same files or the code to generate the same results in a different programming language.
+
+This is something that AI can do very well. Can you plan an approach to translate the code to this data? Please, plan totally, do not be anything. And I'm gonna ask it to do that, okay? So I'm about to run into my limit.
+
+The reason why I will be able to keep working is because I have spent a little bit of money to extend. Well, not extend my limit, but to use tokens in a per token basis, which means purchasing usage credits from claw or from anthropic.
+
+So you can always buy these with your credit card with different costs or whatever discounts. I will tell you though that spending money beyond your usage limit is generally more expensive. So it's not the same thing to use your $20 subscription weekly limit.
+
+As spending $20 in tokens, okay? And yes, the Holcombe paper file is not part of the repo just because I wanted you guys to see how it works with a different file. I will be posting the repo, which I still have it in the chat, right?
+
+But yeah, it is not part of the current repo, okay? So just an example there. One sec, please. So let me post this for you here, sorry about that. Okay, so far we have been discussing generative AI conducting separate research tasks, clean data analysis interpretation, but what are the capabilities on a more synthesizing level?
+
+Can it generate a chunk of research if given the data set, what are the risks for the proliferation of such research article? Well, it can definitely, if we give it a data set and we tell it write a research paper, it can definitely do it.
+
+We can also feed it a lot of literature reviewed to plan the approach to do a certain research paper. I would honestly never trust this to do a whole research paper on its own. It doesn't have the experience, it doesn't have the context to write a decent paper that can actually get published somewhere.
+
+I wouldn't do it, but it can definitely. What are the risks of proliferation? If you could clarify that in the chat, that would be great. But what I do believe is that if we allow the AI to do everything on its own, as I said, it doesn't have the perfect context to actually do something that is worth researching.
+
+And it can always make small mistakes that you don't notice if you don't actually review the results and that can destroy the whole findings, right? You know that a small coding error can destroy the whole significance of a research paper in terms of like the econometrics or empirical models.
+
+So always be careful with that, okay? Going back to this plan, which is what I was doing before, if you'll remember, I've asked the agent to review an existing legacy code repository and to translate that into STATA, okay?
+
+And what I will say is that for STATA, there is an additional step that you need to have, which is to install what we call an MCP, basically an add-on to the AI agent. And I will give you the link for that because if we do not install that, and of course, if you don't have a subscription to STATA, you won't be able to actually run any STATA code.
+
+Like Claude won't be able to connect to STATA and run the code, okay? So notice that it also, Claude also noticed that there's some comments in Spanish that I wrote when I actually wrote this code. It is asking me follow-ups, whether it should translate to English.
+
+It has a little bit other questions about the code details of the STATA files that it's gonna write, and what is the deliverable? Do you want this or that package, whatever? So I'm just gonna tell it, do what you think is best, do it in English, create a small STATA file, and test if you can run it, tell me if you can.
+
+And the reason why I'm doing this is to show you that you do need an additional executable, which we call the STATA MCP, which is this GitHub repo that I just sent you through the chat. If you are not familiar with the way that this works, that's not a problem because you can just feed it the link that I just gave you.
+
+Well, actually it was able to do it, but let's say it wasn't able to do it. You could always give the link to Claude itself so that on its own, it adds that capability to its set of tools so that it can actually run the code.
+
+I will say this connection with STATA is not as good. Let's say it's not as seamless as doing it in an open source language that is installed in your computer, so be careful with that. And for other things, I know that it has a very good MATLAB interface, so that's very useful.
+
+I'm not sure about SPSS or the other ones. I know that SAS, it works for people who use SAS. I hope that you never have to use SAS, but it does have a capability to run SAS as well as STATA, as I said, but it's not as seamless.
+
+Well, let's just wait until that runs. Oh, actually, apparently it was able to do, in the case that it weren't able to do it and it needs this, you can just feed the link to the agent. Great, so a lot of the things that we have to do with a code that is old, often are very tedious to do.
+
+I've automated most of that with the agent. You could reorganize everything into folders, that it can definitely do it. It can write documentation for yourself or for another agent meaning for itself, for cloud itself to use in the future.
+
+You can review the code, suggest improvements, suggest a better folder structure and implement that folder structure and write that documentation for sure. So the case study, as we were reviewing it, was the old code that I had written and I've sent to the chat.
+
+So let's go back to this. Let's see, after it did some research, it did tell me that it found some repositories online and it told me that they state that the 2021 survey redesign did something. So it applied some changes to actually connect, to actually correct the code so that it's correctly written in terms of the survey design.
+
+So these are technical things relative to the survey itself. My point here is that it is able to correct its own code based on what other people have done and have uploaded online. So notice that it told me that it re-ran the script, it is able to do it and all 24 provinces in 12 months still populate correctly with the added diagnostics.
+
+Excellent. So it even noticed that there's a couple of small provinces in Ecuador that have very, very bad coverage, only 100 or 135 income earning respondents. So that's actually a very interesting thing. It noticed that, so it probably did something to fix it, but once you know that this is happening, you're probably gonna want to drop these out of your script.
+
+You can ask it to do that as well. Great. There's a trending new thing which is that people are going back to replication packages from papers that are published in grit journals and reviewing whether the code actually makes sense.
+
+These days, this is something that is not that costly in terms of time to do because you can just point the agent to whatever repository, to whatever replication package and you can paste this prompt so that the agent evaluates the results of the regressions of the research in that paper and actually test them against the code and it can catch errors.
+
+And a big thing, this is an economist from the University of British Columbia, they did a blog here in their sub-stack, I think. You'll be able to find it in the repository where they tested a paper published in the American Economic Journal against its own replication package and found some very interesting things.
+
+Essentially, the main result is not replicate against the code because there's some specification errors. This is huge because we can now automate that overview process using AI. And if you're in the economics, let's say discussion, you might have heard that Refine.Ink, I think it's.Ink, it's a new software that does this on its own against the submissions of certain big journals in economics.
+
+So this is a meaningful step towards scientific honesty. There's a whole discussion there that I won't get into, but essentially this is what it's happening behind the hood. We are automating the review process of code that typically would take a lot of people and a lot of time, a lot of effort, call or any other agent can do it on its own and report the findings to a human, an expert human to review.
+
+So this is just an example of what we can use, what we can do with Claude. Getting a little bit into this and let's say that we wanna customize the agent even more. Let's try and help the agent help you by writing instructions for the agent.
+
+So Claude, it accepts a markdown format instructions file which is called Claude.MD. When you write instructions in that file in your folder, it will try and follow those instructions as best as it can. So Markdown, some of you may already know it, it's very easy to learn and use.
+
+You can just write some instructions there and Claude will follow them. Perhaps you will say always write in technical English, never use these words, never use M-dashes. AI loves to use M-dashes, so that's a good one. Or you can do specific details about the type of code that you like to write, always write state of code, never use this package, always use this other package and so and so.
+
+You can direct the agent to do things the way that you'd like to do it. How to do this with Claude, it does need a file that is called Claude.MD. Other agents such as Codex, Cursor or the whole wealth of them that exists, they will accept agents.MD.
+
+Once you've generated a memory of what you like to do after you've discussed things with Claude a lot, let's say that I have a particular set of instructions there or Claude already knows based on its memory, you can always tell it to write the instructions for itself, okay?
+
+So notice here going back to my replication package for the whole com paper, it is asking me for permission to use data, okay? So I can allow it or I can not allow it. And I hope you can still see this, Claude is now using my computer to open up data as if it were an actual human doing things.
+
+It's not that good at it, but it's trying to realize where is data. It says it's likely on my second display, switching to check and it's trying to find it. As I said, it's not very good at it, but it might be able to do it after a while.
+
+Just gonna suspend that in terms of time, but notice that computer usage is a possibility with Claude that is very, very advanced. You can essentially automate the whole thing in terms of your code, you know? But as I said, the MCP will allow you to run this through the terminal so that it doesn't have to do this on its own all the time.
+
+I think I don't have the MCP installed right now, but definitely that's an option. Is there in a specific location where Claude.md must be saved? I wanna say that you should always have it on the root of your folder.
+
+So if I have my folder right here for the course, I, and you will find that I did write Claude.md, I will open it with Notepad so that you can look how it look at it. I did ask Claude at some point to write some instructions for the repository.
+
+It is on the root, meaning on the main sort of area, okay? I asked it to use a particular writing style to use Beamer, using Porto, and the whole thing. And also, yet, it is only using one branch.
+
+So this, you can do it whatever way you want. You can ask Claude to write it for you or your agent to write it for you, it doesn't matter. So that is important. Definitely take that into account when you're working on your research with this.
+
+It's very useful. You can also tell it to write a readme file for a human, a replication manual, like an actual PDF, for example. It can also use late tag for you. It can do anything really. So there's that.
+
+Let's actually get to some research sort of applications there. I mean, literature review. So I have some other use cases there. Case three, what we're gonna do is we're going to ask Claude to review a paper that I have written, and to do some other research and see what other papers I can find for my literature review.
+
+For that, we should definitely consider that agents, they don't really like PDFs. They can still read them and it might seem that they do it very well. But I will say that PDFs are often very difficult to manage for the agent because it has to use a lot of different capabilities to translate the PDF text into something that I can actually read.
+
+It doesn't mean that it cannot do it. It just means that it's gonna take more effort for the agent to use it, meaning that it's gonna use more of your limit. So how to best do this? Well, if you have text on a Word document, I would say Word document best better than a PDF.
+
+But the best thing for an agent is to just feed it a markdown file with the contents of your paper. Okay? You don't need to actually translate it by hand. You could even use the agent itself to transform it using an online tool.
+
+There's online tools about this, everywhere on the internet. Or you can use a web-based, like there's web pages to transform things to markdown. You can just upload your PDF in here, rich text to markdown. There's a lot of them, honestly, you just pick the one that you like.
+
+And you can potentially paste the text here. Or I think you can upload something probably, I think not this one, PDF to markdown. There's this one. Just convert it. Naturally, if it's sensitive stuff that you don't want to send to the internet, don't do this, right?
+
+I'm just gonna do this with some manual. I'm gonna convert this, and then you can paste the markdown file for cloud to consume. That is going to save you a lot of tokens. So very recommended, if you don't wanna spend that much money on extra usage.
+
+Okay? So probably it will take a while because it's very long, but definitely go ahead and do that. And I wanted to do that because the literature reviews often involve using a lot of PDFs. So it's very recommended that if you want cloud to read papers that you've downloaded, transform them to markdown first.
+
+However, the other side of the coin is asking cloud to search for papers. Okay? So I'm going to open a new conversation. And for context, I do have it here in case three. I have PDF of my MA thesis, and I'm gonna ask it to read it and tell me what comments it has on my literature review.
+
+Okay? So let's say open case three. That's older. Look at the PDF in there. Transform it to markdown and read it. Read the literature review, which in my papers call introduction, and give me comments about it. So once this is done, I will ask cloud to look for other papers that I should have been citing or to just summarize the whole literature in the past five years.
+
+Naturally, this is limited to the papers that I can find publicly. So if there's a lot of papers that you do need a subscription for, there's connectors. Just like the question right here, how to connect cloud to access resources, PubMed, World of Science?
+
+Well, there's connectors. So connectors are MCPs, they call them. There's this one which is called Paper Search MCP, Scholar MCP for Google Scholar Paperclip. And there's endless options for that you can use. Some of them are gonna require you to log in somewhere.
+
+Like for example, for journals that require a subscription you might have to log in with your university email. And then it can look others, maybe it's just Google Scholar. So just pulling data from the internet. If you have a specific MCP, a specific source that you want to review, my suggestion is look for the connector online that allows you to connect with it.
+
+PubMed is already in this one, which is called Paper Search MCP. So how to connect that MCP? As I said before, you just look for the MCP link, typically on GitHub, and you just give it to Claude, and it will install it on its own, okay?
+
+So that's the way that you would do this. There's always going to be a lot of MCPs for different things. Some of them might overlap with others, but you can just always give them to Claude, see if they're useful, and then if you don't like them, just tell Claude itself to uninstall them, okay?
+
+So it has reviewed my literature review, told me what works well, and it tells me that I didn't do a number of things. A literature gap without demonstrating it was search. Oh man, that's a good, same issue, but more acute.
+
+Robustness checks paragraphs is procedural, not a contribution, so it shouldn't be there. So and so and so, okay? Now, I'm gonna give this MCP, and I'm gonna ask it to review papers online that can fix some of the things that Claude thinks I should be fixing.
+
+So probably gonna take a while on that, but definitely that something can be done. This is a different part of the research process that you're able to automate as well. My suggestion here is to always ask Claude to review the papers, download them if it can, and to summarize them in a very concise review for you, maybe a Word document, even a PDF, you can ask it to do for you, and actually review it yourself, okay?
+
+Before you trust Claude into doing everything that it's supposed to do, always double check. It asks me whether it should be available in all of my projects in the computer, or this project only. I'm gonna ask it to just do it for this project.
+
+I guess that will take a little bit less time, and it's gonna do the installing for you on the background. And it does say that it meets an unpayable API call, meaning that it will use my email for that.
+
+This is the email that I set up my account with. This is why it knows. I'm just gonna tell it to skip for now. The exercise is the same anyway. I'm just gonna ask it to look using the MCP, or look online for papers to fix the things that it told me that it needs to fix.
+
+And it's already installed, didn't take a lot of time, and it's registering it. So this is just the process that you always have to do with the MCPs, okay? Can you please use the MCP to find one, three papers to solve one or more of the issues that you raised.
+
+And probably gonna use the MCP, the MCP, it's just an additional capability that allows Claude to do this, to do something that out of the box, it cannot, okay? So there's MCPs for a lot of things. Many of them are already installed with Claude itself.
+
+For example, looking through your emails, if you connected. For example, looking through Slack, Teams, even reading a PDF, that's technically an MCP, but apparently, okay, it's doing it. So no worries there, probably gonna take a while, but that's definitely something you can do.
+
+Let's check on the progress for this other thing. Oh, I think it couldn't do it, but well, in any case, I only want to tell it to install the MCP. For state, this is a very specific error that can happen.
+
+Use this MCP to rework this data from the book. And well, obviously, as I've been doing so far, you can always run many things at once and move them around so that they're close to each other. Okay, it's checking through different sources.
+
+It might not be able to use all of the sources because it told me it's rate limited on this one, cement it's color, it's using these other sources, okay? So it's already found when German Angel Subsidy Paper, very interesting, that is probably gonna use for this.
+
+And well, that is essentially the process for the literature to be a part of things. You don't really need an MCP to do this because it can always do a web search on its own, but naturally it's always only going to find papers that are easily accessible online.
+
+So probably just archive, I guess, those are relatively easy to access. I think you don't even need an account. So if you wanted to look in specific places, MCPs are the way to go, okay? Just while it does that, let's move on.
+
+I did the paper search MCP, but there's a few others that you can use. Definitely you can look for others that are more useful to you. Writing review, that's an important thing as well. And once it finishes with the literature of your part, we'll test it.
+
+I believe one of the worst things that Plot or any AI agent does is to write. It's always gonna write in this polished, formal tone that is very obvious that an AI wrote it. So in order to even, that's why I said you can't fully automate the full research process.
+
+One of those reasons is the writing. But if you wanted to review your writing or write the mechanical parts, such as maybe a literature review, you can enhance the way that Plot does this things using instructions. You can use agents, MD or clot.md to help it do things.
+
+But there's also the concept of skills. The skills are a set of instructions that are more specific to a certain task. And once again, they're just a markdown file that describes an instruction. So it's essentially a reusable prompt that can be used to write your paper in your own style.
+
+But you can do skills for everything, for writing code, for reviewing code, for organizing folders, for doing specific research processes online, and so on. One of the skills that a lot of people have used is to ask clot to review your own writing and to write a skill that helps the agent to write in your own tone.
+
+Everyone has their own specific writing style. So what I did is I told clot to review my paper, or a few papers, and build a skill which is called Daniel voice. And then we can apply that skill later.
+
+Where I have a bunch of skills, honestly, you can see this in this other GitHub repo. Sorry if I'm sending a lot of stuff there, but it's the way that it goes. But I will show you how that skill looks.
+
+So what is a skill, really? As I said, it's a markdown file that describes a certain process to the agent. And I have it here in my GitHub repo, which is specific to my skills. I think I have it somewhere around here, the codex, the clot, there it is.
+
+So it's just a markdown file that is formatted on a very specific way. And once again, you can always ask clot to do it on its own. And this is all written by AI. It tells me the general sort of idea, the type of grammar, first person, plain verbs are inflated, only one claim per sentence, absolutely no end dashes, Canadian English, contractions, no typos, and technical writing.
+
+And so on and so on, okay? This is something that I was able to generate by feeding it to my own writing. And so that it sounds a little bit more natural according to me. Now, maybe you don't wanna do that because maybe you wanna improve your writing.
+
+You can always feed it other stuff. You can feed it famous papers. You can feed it famous books, articles, whatever you want in order to generate a voice skill to apply it. And I will briefly go through the way that we can write this skill.
+
+Notice that it already found the papers that it was looking for. It tells me the papers. Notice that it's working paper here, 2009, 2024, 2019. Excellent. So I could ask it to fix it already, to write the fixes that it thinks it needs to do, using my voice skill.
+
+So right here, a paragraph that fixes Jesus' text. Let's say a free paragraph text that fixes these mistakes, use the papers, and I am going to invoke the skill. How do I do that using the slash? And I need to look for the actual skill.
+
+I don't think it's showing up here, but you can always just tell it to use the skill because it already learned it before. And I'll show you how to do that in a second. But yeah, this is the way that it goes.
+
+Notice that you can see that it's actually using the skill because it already has it installed. It runs the skill. And a skill, as I said, it can be about writing, it can be about coding, it can be anything.
+
+And in the GitHub repo that I've just given you, I have a bunch of different skills. And notice that it has already written the paragraphs that it needs to fix. And it's telling me where I should be placing it.
+
+Placing this description in this text file, replacing the first contribution paragraph, the second contribution paragraph, and so on. So great, I could already ask it to do this to have the text files. I won't do it. It's just an example of what it can do.
+
+Let's see how to even do a skill. Use the paper that is in base two, five, four. Read it and propose the skill that it replicates the voice of the authors. And that is the way that it works.
+
+Okay, once it's done, I'll be able to install the skill in my account and you're gonna be able to use it anywhere that you want. Where are the skills stored? They're usually stored either in your repo, if you want them to be repo-specific, that is in the specific project that you're working on, or you can just tell it to install them in the computer so that you can use it for any repo that you want.
+
+Either the ones that are already on the computer or new repos that you eventually end up creating. Yeah, Stata is kind of a problem to run because of this. It's telling me that it needs to do some fixes just because of time I won't do it, but know that it is possible.
+
+It's not difficult actually to do once you dedicate some times to install the Stata MCP. And it's pulling the text, it's doing the whole thing for the skill so we can wait a little and see how it does it.
+
+You don't need to create all of your own skills. In fact, most of the skills that I have on my own repo that I just sent to you are just adaptations of skills that already exist and were made by researchers elsewhere and posted online.
+
+So I pasted some examples of economists that are in this AI sphere doing interesting things. There's Paul Goldsmith-Pinkham, Scott Cunningham and a great one that I really like is Petrosantana which has a whole GitHub repository with a whole plot set up that you're able to use.
+
+I haven't specifically used his skills and I'll show you. So once you go here to his repo, he's posted a lot of skills and stuff that you can use. How to actually see them? Well, you go to the plot folder, you go to skills and there you can find all of the skills.
+
+So there's a bunch of them. One that I like is create lecture, how to create a lecture specifically. And it essentially is his work quality, you know? So if you wanna replicate that, go ahead and do it. There's others such as I really like the humanized skill.
+
+You can humanize any text that was originally written with AI and give it a more natural tone, you know? And well, the whole skill is not really meant to be read by a human. You just point the AI to the skill, you can download it here or you just send the link to plot or to download it, okay?
+
+And as I said, there's a bunch of them. There's a package check like in order to make an R package you can create a replication package for a journal even. There's a whole process already defined for it by himself.
+
+So that is a useful one as well, review paper. You can download the skill and review any PDF or work document with a paper and it will give you a very, very interesting peer review by the AI, naturally it's powered by your own AI.
+
+So your own model, okay? So that's very interesting and useful. It's written the skill already, it's proposed and it is in the repo. So I can look at it and see what the AI wrote. Remember that what we were doing is I fed the paper to AI so that it generates a skill to replicate the paper's tone.
+
+And if I like it, that's great. I can just tell it to learn it so that we can invoke it in future repos. All come skill or all come voice. I've given it the name that it should have just because I don't want it to be confused with a different skill.
+
+But you can use whatever name that you want, okay? And then it's going to learn it. It's going to paste it on its own directory of skills just like you saw in the GitHub review. But again, you can just ask for to help you with that.
+
+You don't need to know the very specific things about it, okay? So there's a bunch of people that are in this fear. This is another example. Very good Twitter, if you want to read it. I've learned a lot from that and well, the other ones as well, okay?
+
+As I described to you, there's a lot of interesting skills that Pedersen Tana has done that are very useful. You have a replication package review paper that I showed you. There's a state of replication package, a lit review, proofread, humanize, a lot of good stuff that is very useful.
+
+You can use it for free, just downloading it to your folder. Moving on from all that beyond literature review and beyond writing and code, AI can also help you acquiring data, naturally data that is available. Somewhere in the internet.
+
+And there's always these problems that AI hallucinates data points, especially like let's say the official unemployment rate for the United States. It doesn't know because it doesn't necessarily have the full context. It doesn't know how to access the data.
+
+Well, that is no longer a problem because with an MCP that teaches flawed or any agent how to acquire data from the government or from anywhere else, the agent doesn't need to consult its own knowledge or to consult the internet.
+
+It can use the capabilities to directly query where the data is. There's a bunch of them. There's one for Canada, there's one for the US. I created one for Ecuador and there's MCPs for data access anywhere else. So you can just go ahead and ask Claude to look for those MCPs, learn them and you can start querying data.
+
+There will be time for questions and answer for sure. I'll try and rush these last parts which are kind of easy to get. As I said, you can easily consult data and download it to your computer or repo using the MCP Canada for Canadian data.
+
+The US has the US government open data MCP. There's FRED, Census DLS, Bureau of Economic Analysis, a lot of stuff. So you can just point the AI towards this MCP. It will download it on its own and it will learn how to use it.
+
+You don't need to worry about it. There's Europe and Latin America as well. Stata, as I talked about before, it has its own MCP. It has a little bit of a problematic setup, but once you dedicate some time, maybe an hour or so at most, Claude will be able to write code in Stata and also run it with your own Stata installation.
+
+You have to do it with the MCP. That I pasted for you in the Teams chat and everything is also on the repo so you don't need to worry about that. There is a problem, however, with Stata and other close source software.
+
+Usually we have the problem that close source software, private software, such as Stata, SAS and similars, they don't have as many training data on the internet. So the model, by default, cannot learn very well on how to write the best code as opposed to our Python or Julia.
+
+So that is a problem and a lot of people have discussed that. I will say that at this point, it is pretty capable anyway, but it's always going to be a problem, definitely, which is why I personally don't use Stata that much.
+
+And well, I think with AI agents, you can always open up to new horizons, right? Like start using Python or whatever you prefer. It does depend on the case. Stata is a known case that is a little bit problematic.
+
+I know Matlab is less so and SAS is also less so. So it depends on your use case. I think it's still doable. You can still use it. Just be wary of that. And as a final comment, I will remind you that it's better not to use these AI models with very private data.
+
+So if you have a situation that you're using private data, that you got through a grant or you have a partnership with Statistics Canada or the US Census Bureau, you don't want to put all of that identifying information in the model.
+
+So how do we do this? It's not that trivial. However, open source models with very powerful computers can be installed in the computer and you can use them in a very similar way. Now, we are restricted to open source models.
+
+The best two, in my opinion, can be Chinese, Lama from Meta, which is American. They are very useful. You just download them and set them up. As I said, it's not as trivial, but it can definitely be done in universities across the world are starting to host their own models so that researchers can work with AI with private data.
+
+Definitely an option, I will say, however, the general people or just a regular person cannot really run very powerful models. And there's a question there, would an open source model run well on a MEG-64? Most likely, no, there will be specific weaker models that can run on normal computers, but typically you're gonna need a lot of computer power, which is the downside for this.
+
+So yeah, that is a problem. So I believe that many universities, many even employers across the world are trying to run their own open source models for this purpose. With a simple computer, do you have less powerful models?
+
+And you can even ask ought to help you with the setup. Never to actually query the data from Claude, but tell Claude, I need to run an open source model because of this, it is in that. Can you research online and help me with it?
+
+Definitely, but do know that it is a problem with that with the computing power, okay? And that's really it for today. A lot of stuff, I hope it wasn't overwhelming. I am happy to take any questions right now.
+
+So I have a bunch of questions, sandbox mode. I'm assuming that refers to sandbox mode in the agent itself. The sandbox is essentially a little virtual computer that Claude sets up in its own folder. So essentially it's a technical, oh, in positive AI, I am not honestly familiar with positive AI specifically.
+
+However, I do know that all of them kind of work in a similar way. You set up a virtual computer inside your own folder. Claude does that on its own. And then you have restricted permissions that you can operate in there.
+
+So the AI is a little bit more restricted. It cannot just go outside of the folder and do it. Claude co-work and chat dbt work, they by default work in sandbox modes within your computer. In general terms, that's the way that it works.
+
+I'll answer the other question quickly on the chat. When you point Claude code to get repo to prevent altering existing files, are you referring to the local fire or that on GitHub? Generally when I give a link on GitHub, what Claude is going to do is go there, clone the repository on your own computer and then it might change it in your own computer.
+
+It will not alter the files in the repo unless you specifically tell it to. And of course, if you actually have right access to the GitHub repo. So yeah, there's that. Happy to clarify. And I think we have a question from Andre.
+
+Yeah, thank you so much. This is very interesting and very informative. I'm, yeah, the world of AI is really a whirlwind. And for the last three years, the kind of, and this is my question, sort of the sense of normalcy is emerging very fast and things that we were impressed and with 3.5 is no longer relevant.
+
+So I'm trying to get sense, especially given that we're working for the same employer and the government of Alberta was very active and I think cutting edge and integrating AI capabilities inside. I'm sort of getting this picture of, there's three buckets of users.
+
+There's hardcore deaths who develop right codes and shift apps that are used by thousands of millions. There's people in the office who mostly use it for like basic stuff and processing emails or working with texts and maybe doing things that system working.
+
+And there's also people who are like working with statistics and data and wrangling data and doing that, which was what your applications were. So my question is, I wonder if you have a sense whether what you've been showing is a norm right now, both in like in the context of our organization but also maybe outside because I'm having, I'm struggling to maintain my sense of normalcy.
+
+What is normal and should not impress us and what is like the cutting edge and this is still experimental. So I wonder if you can comment on that, your own perspectives. Thank you, Andre, great question. And I think it has no very good answer because it's gonna depend on the subjective experience of everyone.
+
+What I noticed is that in our sort of sphere, which is data work, statistical work with AI, we are not seeing as fast as a take up as we are seeing in other areas like software applications, for example.
+
+So I think we are still early in developing tools that are useful for statistics. If you'll remember what I said around the middle of the workshop was that AI tends to write code in a way that is meant for sort of a software engineering paradigm.
+
+So writing a lot of functions and loops and modules and it's code that is not really optimized for a human to see and read and understand in the grand scheme of a research project, beginning to end data cleaning to statistical results.
+
+So we all are early in this. I find that not a lot of people are very comfortable working so deeply with the software because as you see, there's these things that are coming up, you have GitHub repos, you have to ask the AI to install specific things for our own workflows.
+
+So it's only a relatively small, I would say group of people who are actually using this and what is cutting edge? I still feel like what we are doing here is not really cutting edge, but rather using this for our own workflows.
+
+What I do know, and I do believe that is cutting edge in this sort of area, starting to use local models, install a local model in a university or employer computer, feed it your own training data even so that the model trains only with research code, not with software engineering code.
+
+I think that some people I've heard that are doing it is specifically focused on the cybersecurity side, thanks. But to talk about normalcy in this AI world now, things change every week. So it's like it's very difficult to keep up.
+
+Just yesterday, Gemini now has an agent which is Gemini Spark. I was just looking at it this morning. A week from now or two months from now it might be cutting edge. So it's difficult to talk about normalcy or even sort of a static equilibrium on this.
+
+I think things are changing and just I think even getting to this, getting to the work of an agent and having it help with your projects, that's what most people can do and perhaps should do to keep up as much as possible.
+
+I pity the technical managers who plan a year and a half and trying to decide what and how they're gonna do, how they won't work the next year. It seems a horrible, horrible task and responsibility. Yes, very difficult to plan ahead but it's what we have right now.
+
+Who knows what's gonna happen soon, but yeah, gotta go with it as it goes. Yeah, thank you, Andre, for your question. Hopefully it was helpful. Anyone else? Happy to see over time that there's big questions. Sorry, I'm sorry.
+
+Yeah, I think someone was typing but then they stopped typing. So I don't know if they still have question. Yeah, Joseph. Okay, Joseph. Can I ask a second question? Sure. So my second question, I have three that I've listed and we'll see if we can talk.
+
+Second is I wonder if you can comment or share some insights about the need for templatization of harnesses because you start talking about like what is project specific and what is project agnostic because we want to be able to turn on the diamond, reapply whatever we've learned in a particular project onto the next one.
+
+And by the time you get to the next one, first of all, it could be three times, three months after and world changing to adapt. But also you expect certain stability that would reflect your philosophy and your approach with specificity that each project requires of data analytic project.
+
+So how are you dealing with the tension? And if there's any recommendations or skills or practices that you can share with us to assist in that task. Oh, that is a difficult task. I noticed that with every new model release, we face new issues in terms of what they offer as capabilities.
+
+A big example was when Claude released its Fable model, which is very powerful, but it notably started writing in this very strange and difficult to understand way because it had been trained with certain specific texts. So I found myself now with the necessity to add new instructions so that it can talk like a normal person.
+
+And this is a problem that I've seen, every time that a new model or a big new model releases, you have new issues. I started noticing that more powerful models tend to be worried about edge cases. Oh, yeah, sure.
+
+Like the code works for the data cleaning, but what if the data has this type of feature? And it's like, I don't really care that much about that necessarily. So I need to ask the model to just not worry that much about it and worry about something else.
+
+How do I do it? If you look at my GitHub repo, I have this general sort of programming conventions and this is specific to programming. I can just open it quickly here. And in there, I wrote some code conventions that I always redirect any model to you.
+
+So this is, of course, my type of work, which is statistical research code. And I have specific things for R and Stata and specific ways I want the AI to write. And I've tried to cover as much as possible using AI itself, reviewing my code so that it can tell me what's my style and how to best direct an AI to use it.
+
+So this is specific to Stata. I have something on Julia and on Titan as well. So I find that it's difficult because every time we have new things to worry about. So the best that you can do is notice that and ask the AI to update your code conventions.
+
+So this is an ongoing work. I've felt that this has been useful. I never allow the AI to write the code in the way that it comes out of the box. I always redirect it, like for serious work, of course, I always redirect it to this.
+
+So I recommend everyone who is very specific about the way that they want the code written to get one of these markdown files written and copied and pasted across the reloads. So basically with every project, you expect the hardness to be unique.
+
+It would rise with something that you've done before. Yes, unique because as I make new projects, we have new models that make new mistakes. So I have to update them, but also maybe specific to the specific research topic at hand, which means a lot of iteration.
+
+But I think that this generalized conventions apply to most of the cases here because my work, let's say it's very specific, you know, always data and analysis work, but it depends on what you're doing really. Hopefully that helps.
+
+Thank you, Andre. Anything else? If not, I guess that is it. So thank you, everyone, for being here with Superfund. I know it's a lot of information, so hopefully it helps. You'll get the recording and you have my GitHub repo there and you can always throw a message on GitHub or LinkedIn, I think it's posted there too.
+
+So yeah, happy to help and thank you, Daria, for the chance. Yeah, thank you so much, Daniel, for being kind of today's speaker for this workshop. I think also it was very useful, hopefully for the people who attended.
+
+So yeah, have a good rest of your day to everyone and yeah, I hope to see you in our future workshops as well. Bye. Thank you, everyone, bye, thank you.
